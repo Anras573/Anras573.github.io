@@ -154,18 +154,47 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+.main-container {
+    background: #E6E6DC;
+    // background: #ccc;
+}
 
+.header-container, .footer-container, .main aside {
+    background: #698;
+    // background-color: #f60;
+    // background-color: #00628B;
+}
 
+.footer-container, .main aside {
+    border-top: 20px solid #81A594;
+    // border-top: 20px solid #e44300;
+}
 
+.header-container {
+    border-bottom: 20px solid #81A594;
+    // border-bottom: 20px solid #e44300;
+}
 
+article {
+    float: right !important;
+}
 
+aside {
+    float: left !important;
+}
 
+img {
+    width: 100%;
+    padding-top: 1em;
+}
 
+nav a {
+    background: #81A594;
+}
 
-
-
-
-
+.btn {
+    background: #81A594;
+}
 
 
 /* ==========================================================================
@@ -174,9 +203,9 @@ nav a:hover {
 
 @media only screen and (min-width: 480px) {
 
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
+    /* ====================
+        INTERMEDIATE: Menu
+       ==================== */
 
     nav a {
         float: left;
@@ -194,9 +223,9 @@ nav a:hover {
         margin-right: 0;
     }
 
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
+    /* ========================
+        INTERMEDIATE: IE Fixes
+       ======================== */
 
     nav ul li {
         display: inline;
@@ -209,20 +238,20 @@ nav a:hover {
 
 @media only screen and (min-width: 768px) {
 
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
+    /* ====================
+        WIDE: CSS3 Effects
+       ==================== */
 
     .header-container,
     .main aside {
         -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
+        -moz-box-shadow: 0 5px 10px #aaa;
+        box-shadow: 0 5px 10px #aaa;
     }
 
-/* ============
-    WIDE: Menu
-   ============ */
+    /* ============
+        WIDE: Menu
+       ============ */
 
     .title {
         float: left;
@@ -233,9 +262,9 @@ nav a:hover {
         width: 38%;
     }
 
-/* ============
-    WIDE: Main
-   ============ */
+    /* ============
+        WIDE: Main
+       ============ */
 
     .main article {
         float: left;
@@ -250,9 +279,9 @@ nav a:hover {
 
 @media only screen and (min-width: 1140px) {
 
-/* ===============
-    Maximal Width
-   =============== */
+    /* ===============
+        Maximal Width
+       =============== */
 
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
