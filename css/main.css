@@ -154,25 +154,20 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
-.main-container {
+body {
     background: #E6E6DC;
-    // background: #ccc;
 }
 
 .header-container, .footer-container, .main aside {
     background: #698;
-    // background-color: #f60;
-    // background-color: #00628B;
 }
 
 .footer-container, .main aside {
     border-top: 20px solid #81A594;
-    // border-top: 20px solid #e44300;
 }
 
 .header-container {
     border-bottom: 20px solid #81A594;
-    // border-bottom: 20px solid #e44300;
 }
 
 @media only screen and (min-width: 768px) {
@@ -187,11 +182,7 @@ article {
 
 aside {
     float: left !important;
-    text-align: right;
-}
-
-aside ul li a {
-    background: #81A594;
+    text-align: center;
 }
 
 aside a {
@@ -204,6 +195,7 @@ aside ul {
     display: block;
     margin: 0;
     padding: 0;
+    text-align: right;
 }
 
 aside li {
@@ -220,19 +212,23 @@ aside li:hover {
     background-color: #81A594;
 }
 
+aside li a {
+    text-decoration: none;
+}
+
 .collapsed {
     background: #698;
 }
 
 img {
-    width: 100%;
-     
-    padding: 1em; 
+    width: 90%;
+    padding: 1em 1em 0em 1em; 
 }
 
 .contact-info {
-    padding: 5%;
+    padding: 0 5%;
     font-size: 1.25rem;
+    text-align: right;
 }
 .contact-info p {
     color: #E6E6DC;
@@ -241,6 +237,15 @@ img {
 
 .contact-info a {
     display: block;
+    padding-bottom: 5%;
+}
+
+aside .active {
+    background-color: #81A594;
+}
+
+.not-active {
+    display: none;
 }
 
 /* ==========================================================================
