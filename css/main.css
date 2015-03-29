@@ -158,11 +158,11 @@ body {
     background: #E6E6DC;
 }
 
-.header-container, .footer-container, .main aside {
+.header-container, .footer-container, .main #menu {
     background: #698;
 }
 
-.footer-container, .main aside {
+.footer-container, .main #menu {
     border-top: 20px solid #81A594;
 }
 
@@ -171,8 +171,15 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-    aside {
+    #menu {
         margin-right: 2em;
+    }
+    .main #menu {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+        -moz-box-shadow: 0 5px 10px #aaa;
+        box-shadow: 0 5px 10px #aaa;
+        
+        width: 28%;
     }
 }
 
@@ -180,39 +187,39 @@ article {
     float: right !important;
 }
 
-aside {
+#menu {
     float: left !important;
     text-align: center;
 }
 
-aside a {
+#menu a {
     color: #fff;
     font-size: 1.5rem;
     text-align: right;
 }
 
-aside ul {
+#menu ul {
     display: block;
     margin: 0;
     padding: 0;
     text-align: right;
 }
 
-aside li {
+#menu li {
     padding: 1rem 5%;
     cursor: pointer;
     list-style-type: none;
 }
 
-aside li:active {
+#menu li:active {
     background-color: #E6E6DC;
 }
 
-aside li:hover {
+#menu li:hover {
     background-color: #81A594;
 }
 
-aside li a {
+#menu li a {
     text-decoration: none;
 }
 
@@ -240,12 +247,27 @@ img {
     padding-bottom: 5%;
 }
 
-aside .active {
+#menu .active {
     background-color: #81A594;
 }
 
 .not-active {
     display: none;
+}
+
+#menu {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.content ul {
+    display: inline-block;
+    margin-top: 0;
+}
+
+.content a {
+    color: black;
+    font-weight: bold;
 }
 
 /* ==========================================================================
