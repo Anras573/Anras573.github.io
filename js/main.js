@@ -1,42 +1,31 @@
+var cvApp = angular.module('cvApp', ['ui.router']);
 
-function getHash() {
-    if (location.hash) {
-        var hash = location.hash.replace('#', '');
-        fade(hash);
-    } else {
-        var hash = 'experience';
-        fade(hash);
-    }
-}
-function fade(target) {
-    $('#menu li').removeClass('active');
-    $('#menu a[href=#' + target + ']').parent('li').addClass('active');
-    $('.content').fadeOut(200, function () {
-        $('.content > div').addClass('not-active').removeClass('active');
-        $('.content .' + target).addClass('active').removeClass('not-active');
-        $('.content').fadeIn(200, function () {
-            if ($(document).width() <= 770 && location.hash) {
-                $('html, body').animate({
-                    scrollTop: $('#menu').height() + $('.header-container').innerHeight()
-                }, 'slow');
-            }
-        });
-    });
-}
-$(document).ready(function () {
-    getHash();
-    window.onhashchange = function () {
-        getHash();
-    };
-    $('#menu li').on('click', function () {
-        var href = $(this).find('a').attr('href');
-        if (window.location.origin.indexOf('undefined') !== -1) {
-            window.location.href = window.location.origin.replace('undefined', '') + '/' + href;
-        } else {
-            window.location.href = window.location.origin + '/' + href;
-        }
-    });
-    $('#menu li a').on('click', function (event) {
-        event.stopPropagation();
-    });
+cvApp.config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise("/experience");
+    
+    $stateProvider
+        .state('experience', {
+            url: '/experience',
+            templateUrl: 'partials/experience.html'
+    })
+        .state('education', {
+            url: '/education',
+            templateUrl: 'partials/education.html'
+    })
+        .state('tech', {
+            url: '/tech',
+            templateUrl: 'partials/tech.html'
+    })
+        .state('leisure', {
+            url: '/leisure',
+            templateUrl: 'partials/leisure.html'
+    })
+    ;
 });
+
+cvApp.controller('cvController', ['$scope', '$location', function($scope, $location) {
+        $scope.isActive = function(location) {
+            return location === $location.path();
+        };
+}]);
+

@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" ng-app="cvApp"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -29,7 +29,7 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
 
-                <div id="menu">
+                <div id="menu" ng-controller="cvController">
                     <img src="img/AndersB.png" alt="profile pic">
                     <div class="contact-info">
                         <p>
@@ -43,146 +43,44 @@
                         <a target="blank" href="//dk.linkedin.com/pub/anders-bo-rasmussen/21/931/676/en">LinkedIn</a>
                     </div>
                     <ul>
-                        <li class="active">
-                            <a href="#experience">
+                        <li ng-class="{ 'active': isActive('/'), 'active': isActive('/experience')}">
+                            <a ui-sref="experience">
                                 Experience
                             </a>
                         </li>
-                        <li>
-                            <a href="#education">
+                        <li ng-class="{ 'active': isActive('/education')}">
+                            <a ui-sref="education">
                                 Education
                             </a>
                         </li>
-                        <li>
-                            <a href="#tech">
+                        <li ng-class="{ 'active': isActive('/tech')}">
+                            <a ui-sref="tech">
                                 Technical Skills
                             </a>
                         </li>
-                        <li>
-                            <a href="#leisure">
+                        <li ng-class="{ 'active': isActive('/leisure')}">
+                            <a ui-sref="leisure">
                                 Leisure
                             </a>
                         </li>
-                        <!--
                         <li>
-                            <a href="#id4">
+                            <a href="downloadable_cv.pdf">
                                 Download Résumé
                             </a>
                         </li>
-                        -->
                     </ul>
                 </div>
 
                 <div class="content">
-                    <div id="experience" class="experience">
-                        <h1>Experience</h1>
-                        
-                        <h2>2014 - 2015 Junior Software Developer at Autobutler</h2>
-                        
-                        <h2>2014 - 2014 Developer Intern at Autobutler</h2>
-                        
-                        <h2>2014 - 2014 Developer and System Developer at Playnation.eu</h2>
-                        
-                        <h2>2009 - 2009 Volunteer in IT and Communications at Roskilde Festival</h2>
-                        
-                        <h2>2006 - 2008 Service Employee at Fakta</h2>
-                        
-                    </div>
-                    <div id="education" class="education not-active">
-                        <h1>Education</h1>
-                        
-                        <h2>2015 - 2016 Pba. in Software Development</h2>
-                        <ul>
-                            <li>Project Management</li>
-                            <li>System Integration</li>
-                            <li>Contract Based Development</li>
-                            <li>Big Databases</li>
-                            <li>Test</li>
-                        </ul>
-                        
-                        <h2>2015 - 2015 Coursera Courses</h2>
-                        <ul>
-                            <li>Beginning Game Programming in C#</li>
-                            <li>Programming Mobile Applications for Android Handheld Systems: Part 1</li>
-                            <li>Programming Mobile Applications for Android Handheld Systems: Part 2</li>
-                        </ul>
-                        
-                        <h2>2012 - 2015 Datamatiker</h2>
-                        <ul>
-                            <li>Programming</li>
-                            <li>Databases</li>
-                            <li>System Development</li>
-                            <li class="no-list"><strong>Elective Courses</strong></li>
-                            <li>Neural Networks</li>
-                            <li>Game Programming in Java</li>
-                        </ul>
-                        
-                        <h2>Spoken Languages</h2>
-                        <ul>
-                            <li>Danish (Native or bilingual proficiency)</li>
-                            <li>English (Native or bilingual proficiency)</li>
-                        </ul>
-                        
-                    </div>
-                    <div id="tech" class="tech not-active">
-                        <h1>Technical Skills</h1>
-                        
-                        <h2>Languages</h2>
-                        <ul>
-                            <li>Java</li>
-                            <li>C#</li>
-                            <li>PHP</li>
-                            <li>MySQL</li>
-                            <li>PostgreSQL</li>
-                            <li>HTML5</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Ruby</li>
-                        </ul>
-                        
-                        <h2>Frameworks</h2>
-                        <ul>
-                            <li>Twitter Bootstrap</li>
-                            <li>Rails</li>
-                            <li>jQuery</li>
-                            <li>XNA</li>
-                        </ul>
-                        
-                        <h2>Programmes</h2>
-                        <ul>
-                            <li>Sublime Text</li>
-                            <li>Netbeans</li>
-                            <li>Notepad++</li>
-                            <li>Unity3D</li>
-                        </ul>
-                    </div>
-                    <div id="leisure" class="leisure not-active">
-                        <h1>Leisure</h1>
-                        <p>
-                            I'm a 25 year old danish guy who lives in Slagelse and studies in Odense. Right now I spend most of my free time with my girlfriend,
-                            but when I’m not with her, I enjoy playing video games and hanging out with my best friends.
-                        </p>
-                        
-                        <p>
-                            I like learning about new technologies and love trying new things. I'm always seeking out new knowledge on sites like
-                            <a href="http://www.reddit.com/r/programming">Reddit</a> and generally just <a href="http://google.com">Google</a>,
-                            Or hearing about them from friends and colleagues.
-                        </p>
-                        
-                        <p>
-                            <strong>I love comics!</strong> I am generally picky about my comics, but I'm always looking for new comics to read. I buy most of my comics from 
-                            <a href="http://www.comixology.eu">Comixology</a> and the others from <a href="http://www.darkhorse.com/">Dark Horse Comics</a>.
-                            I like reading comics with a darker theme, like The Walking Dead, Marvel Zombies or Aliens.
-                        </p>
-                    </div>
+                    <div ui-view></div> 
                 </div>
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <script>window.angular || document.write('<script src="js/vendor/angular.min.js"><\/script>');</script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
@@ -200,7 +98,7 @@
                 e.src = '//www.google-analytics.com/analytics.js';
                 r.parentNode.insertBefore(e, r)
             }(window, document, 'script', 'ga'));
-            ga('create', 'UA-60332501-1', 'auto');
+            ga('create', 'UA-60332501-4', 'auto');
             ga('send', 'pageview');
         </script>
     </body>
