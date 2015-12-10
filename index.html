@@ -2,104 +2,76 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="" ng-app="cvApp"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Résumé for Anders Bo Rasmussen</title>
-        <meta name="description" content="Résumé for Anders Bo Rasmussen">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Résumé for Anders Bo Rasmussen</title>
+    <meta name="description" content="Résumé for Anders Bo Rasmussen">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="container">
+      <nav class="fixed">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+        </ul>
+      </nav>
+    </div>
 
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <h1 class="title">Résumé for Anders Bo Rasmussen</h1>
-            </header>
+    <div class="container body">
+      
+      <div id="about" class="section">
+        <h1 class="title">About</h1>
+        <div class="pull-left">
+          <img class="thumbnail" src="img/AndersB.png" alt="Profile Picture">
         </div>
+        <div class="about">
+          <p>
+            My name is Anders Bo Rasmussen, I'm a Danish <strong>Back-end developer</strong>, currently taking a <strong>bachelor in software development</strong> - expecting to graduate summer 2016.
+            I spend most of my free time with my girlfriend, we love taking trips around the country, and when I'm not with her, I play video games and hang out with my best friends.
+          </p>
+          <p> 
+            <strong>I love comics!</strong> I am generally picky about my comics, but I'm always looking for new comics to read. I buy most of my comics from 
+            <a href="http://www.comixology.eu">Comixology</a> and the others from <a href="http://www.darkhorse.com/">Dark Horse Comics</a>.
+            I like reading comics with a darker theme, like The Walking Dead, Marvel Zombies or Aliens.
+          </p>
+        </div>
+      </div>
+      
+      <div id="experience" class="section" style="height: 500px;">
+        <h1 class="title">Experience</h1>
+      </div>
+      <div id="xy" class="section" style="height: 500px;"></div>
+    </div>
 
-        <div class="main-container">
-            <div class="main wrapper clearfix">
-
-                <div id="menu" ng-controller="cvController">
-                    <img src="img/AndersB.png" alt="profile pic">
-                    <div class="contact-info">
-                        <p>
-                            Anders Bo Rasmussen
-                            <br>
-                            Slagelse
-                            <br>
-                            Denmark
-                        </p>
-                        <a href="mailto:anras573@gmail.com">E-mail</a>
-                        <a target="blank" href="//dk.linkedin.com/pub/anders-bo-rasmussen/21/931/676/en">LinkedIn</a>
-                    </div>
-                    <ul>
-                        <li ng-class="{ 'active': isActive('/'), 'active': isActive('/experience')}">
-                            <a ui-sref="experience">
-                                Experience
-                            </a>
-                        </li>
-                        <li ng-class="{ 'active': isActive('/education')}">
-                            <a ui-sref="education">
-                                Education
-                            </a>
-                        </li>
-                        <li ng-class="{ 'active': isActive('/tech')}">
-                            <a ui-sref="tech">
-                                Technical Skills
-                            </a>
-                        </li>
-                        <li ng-class="{ 'active': isActive('/leisure')}">
-                            <a ui-sref="leisure">
-                                Leisure
-                            </a>
-                        </li>
-                        <li>
-                            <a href="downloadable_cv.pdf">
-                                Download Résumé
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content">
-                    <div ui-view></div> 
-                </div>
-
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
-
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-        <script>window.angular || document.write('<script src="js/vendor/angular.min.js"><\/script>');</script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function (b, o, i, l, e, r) {
-                b.GoogleAnalyticsObject = l;
-                b[l] || (b[l] =
-                        function () {
-                            (b[l].q = b[l].q || []).push(arguments)
-                        });
-                b[l].l = +new Date;
-                e = o.createElement(i);
-                r = o.getElementsByTagName(i)[0];
-                e.src = '//www.google-analytics.com/analytics.js';
-                r.parentNode.insertBefore(e, r)
-            }(window, document, 'script', 'ga'));
-            ga('create', 'UA-60332501-3', 'auto');
-            ga('send', 'pageview');
-        </script>
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function (b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+                function () {
+                  (b[l].q = b[l].q || []).push(arguments)
+                });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-60332501-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
 </html>
