@@ -19,42 +19,70 @@
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="container">
-      <nav class="fixed">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-        </ul>
+    <div class="container fixed">
+      <nav id="nav">
+        <div class="pull-right">
+          <button type="button" class="btn btn-small" onClick="toggleNav()">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div id="navbar" class="navbar">
+          <ul id="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
       </nav>
     </div>
 
-    <div class="container body">
-      
+    <div class="container">
+
       <div id="about" class="section">
         <h1 class="title">About</h1>
-        <div class="pull-left">
-          <img class="thumbnail" src="img/AndersB.png" alt="Profile Picture">
-        </div>
-        <div class="about">
-          <p>
-            My name is Anders Bo Rasmussen, I'm a Danish <strong>Back-end developer</strong>, currently taking a <strong>bachelor in software development</strong> - expecting to graduate summer 2016.
-            I spend most of my free time with my girlfriend, we love taking trips around the country, and when I'm not with her, I play video games and hang out with my best friends.
-          </p>
-          <p> 
-            <strong>I love comics!</strong> I am generally picky about my comics, but I'm always looking for new comics to read. I buy most of my comics from 
-            <a href="http://www.comixology.eu">Comixology</a> and the others from <a href="http://www.darkhorse.com/">Dark Horse Comics</a>.
-            I like reading comics with a darker theme, like The Walking Dead, Marvel Zombies or Aliens.
-          </p>
+        <div class="row">
+          <div class="col-4">
+            <img class="thumbnail" src="img/AndersB.png" alt="Profile Picture">
+          </div>
+          <div class="about col-8">
+            <p>
+              My name is Anders Bo Rasmussen, I'm a Danish <strong>Back-end developer</strong>, currently taking a <strong>bachelor in software development</strong> - expecting to graduate summer 2016.
+              I spend most of my free time with my girlfriend, we love taking trips around the country, and when I'm not with her, I play video games and hang out with my best friends.
+            </p>
+            <p> 
+              <strong>I love comics!</strong> I am generally picky about my comics, but I'm always looking for new comics to read. I buy most of my comics from 
+              <a href="http://www.comixology.eu">Comixology</a> and the others from <a href="http://www.darkhorse.com/">Dark Horse Comics</a>.
+              I like reading comics with a darker theme, like The Walking Dead, Marvel Zombies or Aliens.
+            </p>
+          </div>
         </div>
       </div>
-      
-      <div id="experience" class="section" style="height: 500px;">
+
+      <section id="skills" class="section" style="height: 500px;">
+        <h1 class="title">Skills</h1>
+      </section>
+      <section id="experience" class="section" style="height: 500px;">
         <h1 class="title">Experience</h1>
+      </section>
+      <section id="contact" class="section" style="height: 500px;">
+        <h1 class="title">Contact</h1>
+      </section>
+
+      <div class="section">
+        <div class="center">
+          <a href="#about" class="btn btn-blue">
+            Back To Top
+            <i class="arrow-up"></i>
+          </a>
+        </div>
       </div>
-      <div id="xy" class="section" style="height: 500px;"></div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/app.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
