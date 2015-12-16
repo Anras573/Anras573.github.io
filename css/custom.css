@@ -108,7 +108,7 @@ nav ul li a {
     display: block;
     padding: 0.5em;
     color: dodgerblue;
-    font-size: 1.5em;
+    font-size: 20px;
 }
 
 nav ul li a:hover {
@@ -121,7 +121,7 @@ nav ul li a:hover {
         height: 50px;
     }
 
-    nav ul {
+    nav .navbar {
         border-bottom: 2px solid lightblue;
     }
 
@@ -141,7 +141,6 @@ nav ul li a:hover {
 }
 
 .section {
-    padding-top: 1em;
     padding-bottom: 4em;
     padding-top: 50px;
     margin-top: -50px;
@@ -261,9 +260,9 @@ p {
 }
 
 .btn-blue:hover {
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
 }
 
 .arrow-up {
@@ -298,4 +297,29 @@ i {
 
 .pull-right {
     float: right;
+}
+
+.panel ul {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    list-style: none;
+    padding: 1em;
+}
+
+.panel ul li {
+    font-size: 18px;
+    font-weight: 300;
+    color: #888;
+    margin-bottom: 0.5em;
+}
+
+.list_header {
+    color: black !important;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid lightblue;
+}
+
+.strong {
+    font-weight: bold !important;
 }
