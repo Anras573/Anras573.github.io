@@ -70,19 +70,22 @@ body {
 
 @media (min-width: 768px) {
     .navbar {
-        width: 750px;
+        width: 720px;
+        padding-right: 0;
     }
 }
 
 @media (min-width: 992px) {
     .navbar {
-        width: 970px;
+        width: 940px;
+        padding-right: 0;
     }
 }
 
 @media (min-width: 1200px) {
     .navbar {
-        width: 1170px;
+        width: 1140px;
+        padding-right: 0;
     }
 }
 
@@ -294,6 +297,9 @@ i {
 .center {
     text-align: center;
 }
+.center .btn {
+    padding-bottom: 1em;
+}
 
 .pull-right {
     float: right;
@@ -322,4 +328,9 @@ i {
 
 .strong {
     font-weight: bold !important;
+}
+.footer {
+    background-color: white;
+    border-top: 1px solid lightblue;
+    padding: 1em 0;
 }
