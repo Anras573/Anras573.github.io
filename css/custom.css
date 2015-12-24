@@ -182,24 +182,21 @@ nav ul li a:hover {
     }
 }
 
-.about {
+.grey-text {
     font-size: 18px;
     line-height: 1.8em;
     font-weight: 300;
+    color: #888;
 }
 
-.about a {
+.grey-text a {
     text-decoration: none;
     font-weight: bold;
     color: #888;
 }
 
-.about a:hover {
+.grey-text a:hover {
     color: #555;
-}
-
-p {
-    color: #888;
 }
 
 [class*="col-"] {
