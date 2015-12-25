@@ -251,6 +251,11 @@ nav ul li a:hover {
     background-color: #ddd;
 }
 
+.btn-small {
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
 .btn-blue {
     color: #fff;
     background-color: #337ab7;
