@@ -2,104 +2,230 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="" ng-app="cvApp"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Résumé for Anders Bo Rasmussen</title>
-        <meta name="description" content="Résumé for Anders Bo Rasmussen">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Anders Bo Rasmussen - Back-end Developer</title>
+    <meta name="description" content="Anders Bo Rasmussen - Back-end Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <h1 class="title">Résumé for Anders Bo Rasmussen</h1>
-            </header>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="container fixed">
+      <nav id="nav">
+        <div class="pull-right">
+          <button type="button" class="btn btn-small" onClick="toggleNav()">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
 
-        <div class="main-container">
-            <div class="main wrapper clearfix">
+        <div id="navbar" class="navbar">
+          <ul id="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
 
-                <div id="menu" ng-controller="cvController">
-                    <img src="img/AndersB.png" alt="profile pic">
-                    <div class="contact-info">
-                        <p>
-                            Anders Bo Rasmussen
-                            <br>
-                            Slagelse
-                            <br>
-                            Denmark
-                        </p>
-                        <a href="mailto:anras573@gmail.com">E-mail</a>
-                        <a target="blank" href="//dk.linkedin.com/pub/anders-bo-rasmussen/21/931/676/en">LinkedIn</a>
-                    </div>
-                    <ul>
-                        <li ng-class="{ 'active': isActive('/'), 'active': isActive('/experience')}">
-                            <a ui-sref="experience">
-                                Experience
-                            </a>
-                        </li>
-                        <li ng-class="{ 'active': isActive('/education')}">
-                            <a ui-sref="education">
-                                Education
-                            </a>
-                        </li>
-                        <li ng-class="{ 'active': isActive('/tech')}">
-                            <a ui-sref="tech">
-                                Technical Skills
-                            </a>
-                        </li>
-                        <li ng-class="{ 'active': isActive('/leisure')}">
-                            <a ui-sref="leisure">
-                                Leisure
-                            </a>
-                        </li>
-                        <li>
-                            <a href="downloadable_cv.pdf">
-                                Download Résumé
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+      </nav>
+    </div>
 
-                <div class="content">
-                    <div ui-view></div> 
-                </div>
+    <div class="container">
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+      <div id="about" class="section">
+        <h1 class="title">About</h1>
+        <div class="row">
+          <div class="col-4">
+            <img class="thumbnail" src="img/AndersB.png" alt="Profile Picture">
+          </div>
+          <div class="grey-text col-8">
+            <p>
+              My name is Anders Bo Rasmussen, I'm a Danish <strong>Back-end developer</strong>, currently taking a <strong>bachelor in software development</strong> - expecting to graduate summer 2016.
+              I spend most of my free time with my girlfriend, we love taking trips around the country, and when I'm not with her, I play video games and hang out with my best friends.
+            </p>
+            <p> 
+              <strong>I love comics!</strong> I am generally picky about my comics, but I'm always looking for new comics to read. I buy most of my comics from 
+              <a href="http://www.comixology.eu">Comixology</a> and the others from <a href="http://www.darkhorse.com/">Dark Horse Comics</a>.
+              I like reading comics with a darker theme, like The Walking Dead, Marvel Zombies or Aliens.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-        <script>window.angular || document.write('<script src="js/vendor/angular.min.js"><\/script>');</script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+      <div id="skills" class="section">
+        <h1 class="title">Skills</h1>
+        <div class="row">
+          <div class="col-4 panel">
+            <ul>
+              <li class="list_header strong">Frontend</li>
+              <li>HTML / ERB</li>
+              <li>CSS / SASS / Bootstrap</li>
+              <li>JavaScript / jQuery / AngularJS</li>
+            </ul>
+          </div>
+          <div class="col-4 panel">
+            <ul>
+              <li class="list_header strong">Backend</li>
+              <li>Java</li>
+              <li>C#</li>
+              <li>Ruby on Rails</li>
+              <li>MySQL / MSSQL / PostgreSQL</li>
+            </ul>
+          </div>
+          <div class="col-4 panel">
+            <ul>
+              <li class="list_header strong">Toolstack</li>
+              <li>Git / GitHub / BitBucket</li>
+              <li>Sublime Text / Netbeans / Visual Studio</li>
+              <li>Heroku</li>
+              <li>Command Line / iTerm</li>
+              <li>Trello / Jira / Pivotal Tracker</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 grey-text center">
+            <span class="underline"><a href="https://github.com/Anras573" target="_blank">You could also check out my <i class="fa fa-github"></i> GitHub.</a></span>
+          </div>
+        </div>
+      </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function (b, o, i, l, e, r) {
-                b.GoogleAnalyticsObject = l;
-                b[l] || (b[l] =
-                        function () {
-                            (b[l].q = b[l].q || []).push(arguments)
-                        });
-                b[l].l = +new Date;
-                e = o.createElement(i);
-                r = o.getElementsByTagName(i)[0];
-                e.src = '//www.google-analytics.com/analytics.js';
-                r.parentNode.insertBefore(e, r)
-            }(window, document, 'script', 'ga'));
-            ga('create', 'UA-60332501-3', 'auto');
-            ga('send', 'pageview');
-        </script>
-    </body>
+      <div id="experience" class="section">
+        <h1 class="title">Experience</h1>
+        <div class="row">
+          <div class="col-12 grey-text">
+            <h2 class="company">Autobutler</h2>
+            <strong>Junior Software Developer</strong>
+            <p class="year"><strong>Oct. 2014 - present</strong></p>
+            <div class="experience-content">
+              <p>
+                Autobutler is an online workshop portal for carowners, who want an easy way to gather offers from different workshops near them.
+              </p>
+              <p>
+                Fullstack developer in a team of 10 developers. I am responsible for the daily operation of the application. I fix the bugs and make sure the users have a pleasant experience.
+              </p>
+              <p>
+                Autobutler is buildt using <strong>Ruby on Rails</strong> and <strong>PostgreSQl</strong> as the backend. <strong>Bootstrap</strong>, <strong>SASS</strong>, and <strong>React</strong> powers the frontend.
+              </p>
+            </div>
+            <div class="center">
+              <a href="https://www.autobutler.dk" class="btn btn-blue" target="_blank">See Autobutler.dk</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 grey-text">
+            <h2 class="company">Autobutler</h2>
+            <strong>Developer Intern</strong>
+            <p class="year"><strong>June 2014 - Oct. 2014</strong></p>
+            <div class="experience-content">
+              <p>
+                During my internship at <strong>Autobutler</strong>, I was responsible for developing a benefit-system, allowing the car owners to see the benefits they get from other companies, by being part of <strong>Autobutler</strong>.
+              </p>
+              <p>
+                The entire system was developed using <strong>Ruby on Rails</strong> and <strong>PostgreSQL</strong> for the backend. Everything was tested using <strong>RSpec</strong>.
+              </p>
+              <p>
+                The frontend was build using <strong>SASS</strong>, <strong>Bootstrap</strong>, and <strong>jQuery</strong>.
+              </p>
+            </div>
+            <div class="center">
+              <a href="https://www.autobutler.dk" class="btn btn-blue" target="_blank">See Autobutler.dk</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 grey-text">
+            <h2 class="company">Playnation.eu</h2>
+            <strong>Software Developer</strong>
+            <p class="year"><strong>Dec. 2013 - Mar. 2014</strong></p>
+            <div class="experience-content">
+              <p>
+                Part of a two-man team, focused on building an in-house version of <strong>GitHub</strong>.
+              </p>
+              <p>
+                The backend was done in <strong>Java</strong> and <strong>MySQL</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="education" class="section">
+        <h1 class="title">Education</h1>
+        <div class="row">
+          <div class="col-12 panel">
+            <div class="education grey-text">
+              <h3>Bachelor in Software Development</h3>
+              <span class="year"><strong>2015-2016</strong></span>
+              <p>Erhvervsakademiet Lillebælt</p>
+            </div>
+          </div>
+          <div class="col-12 panel">
+            <div class="education grey-text">
+              <h3>Academy Profession Graduate in Computer Science</h3>
+              <span class="year"><strong>2012-2015</strong></span>
+              <p>Erhvervsakademiet Sjælland</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact" class="section">
+        <h1 class="title">Contact</h1>
+        <div class="row">
+          <div class="col-12 grey-text center">
+            <strong>You can always find me on</strong> <br>
+            <a href="https://dk.linkedin.com/in/anders-bo-rasmussen-67693121" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a> <br>
+            <a href="https://github.com/Anras573" target="_blank"><i class="fa fa-github"></i> GitHub</a> <br>
+            Or you can<br>
+          </div>
+          <div class="center">
+            <a href="mailto:anras573@gmail.com" class="btn btn-blue">Send Me An Email</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="center">
+          <a href="#about" class="btn btn-blue">
+            Back To Top
+            <i class="arrow-up"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function (b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+                function () {
+                  (b[l].q = b[l].q || []).push(arguments)
+                });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-60332501-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
 </html>
