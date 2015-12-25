@@ -1,2 +1,2 @@
 # Anras573.github.io
-A 'CV' site for me, using [Initializr](http://www.initializr.com/)
+This is the repo for [My Online CV](http://anras573.github.io/)
