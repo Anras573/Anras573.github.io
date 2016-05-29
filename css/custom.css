@@ -376,3 +376,11 @@ i {
 .education p {
     line-height: 1;
 }
+
+.contact-img {
+    border-radius: 50%;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
