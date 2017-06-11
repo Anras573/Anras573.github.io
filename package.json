@@ -1,0 +1,30 @@
+{
+  "name": "my-online-resume",
+  "version": "1.0.0",
+  "description": "My online resume",
+  "main": "index.html",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "^3.4.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webserver": "^0.9.1",
+    "require-all": "^2.2.0",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anras573/Anras573.github.io.git"
+  },
+  "author": "Anders Bo Rasmussen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anras573/Anras573.github.io/issues"
+  },
+  "homepage": "https://github.com/Anras573/Anras573.github.io#readme"
+}
