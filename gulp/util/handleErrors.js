@@ -19,9 +19,9 @@ module.exports = function() {
     console.error("[Compile Error] " + args);
   }
 
-	if (typeof this.emit != "undefined") {
-		this.emit('end');
-	} else {
-      	//throw new Error(args);
-	}
+  if (typeof this.emit != "undefined") {
+    this.emit('end');
+  } else {
+        //throw new Error(args);
+  }
 };

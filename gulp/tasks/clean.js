@@ -3,5 +3,5 @@ var del = require('del');
 
 //Delete the dist directory
 gulp.task('clean', () => {
-	return del('dist/**');
+  return del('dist/**');
 });
