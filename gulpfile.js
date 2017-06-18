@@ -4,7 +4,7 @@ var sequence = require('run-sequence');
 require('require-all')(__dirname + '/gulp/tasks');
 
 gulp.task('dev', (done) => {
-  sequence('minify', 'server', done);
+  sequence('clean', 'browserify', 'minify', 'server', done);
 });
 
 gulp.task('default', (done) => {
