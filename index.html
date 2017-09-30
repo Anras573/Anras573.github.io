@@ -1,8 +1,5 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -13,263 +10,231 @@
     <link rel="stylesheet" href="dist/assets/css/app.min.css">
   </head>
   <body>
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
-    <div class="container fixed">
-      <nav id="nav">
-        <div class="pull-right">
-          <button type="button" class="btn btn-small" onClick="toggleNav()">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
 
-        <div id="navbar" class="navbar">
-          <ul id="menu">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="container">
-
-      <div id="about" class="section">
-        <h1 class="title">About</h1>
-        <div class="row">
-          <div class="col-4">
-            <img class="thumbnail" src="img/AndersB_optimized.jpg" alt="Profile Picture">
-          </div>
-          <div class="grey-text col-8">
-            <p>
-              My name is Anders Bo Rasmussen, I'm a Danish <strong>Back-end developer</strong>, just finished my <strong>bachelor of software development</strong>.
-              I spend most of my free time with my girlfriend, we love to travel around the country, and when I'm not with her, I play video games and hang out with my best friends.
-            </p>
-            <p>
-              <strong>I love comics!</strong> I am generally picky about my comics, but I'm always looking for new comics to read. I buy most of my comics from
-              <a href="http://www.comixology.eu">Comixology</a> and the others from <a href="http://www.darkhorse.com/">Dark Horse Comics</a>.
-              I like reading comics with a darker theme, like The Walking Dead, Marvel Zombies, or Aliens.
-            </p>
-          </div>
-        </div>
+    <header class="bg-primary">
+      <div class="text-center">
+        <h1>Anders Bo Rasmussen</h1>
+        <img src="img/AndersB.png" alt="My profile photo" class="rounded-circle profile-photo">
       </div>
-
-      <div id="skills" class="section">
-        <h1 class="title">Skills</h1>
-        <div class="row">
-          <div class="col-4 panel">
-            <ul>
-              <li class="list_header strong">Frontend</li>
-              <li>HTML / ERB</li>
-              <li>CSS / SASS / Bootstrap</li>
-              <li>JavaScript / jQuery / AngularJS</li>
-            </ul>
-          </div>
-          <div class="col-4 panel">
-            <ul>
-              <li class="list_header strong">Backend</li>
-              <li>Java</li>
-              <li>C# (MVC, .NET CORE)</li>
-              <li>Ruby on Rails</li>
-              <li>MySQL / MSSQL / PostgreSQL</li>
-            </ul>
-          </div>
-          <div class="col-4 panel">
-            <ul>
-              <li class="list_header strong">Toolstack</li>
-              <li>Git / GitHub / BitBucket</li>
-              <li>Atom / Netbeans / Visual Studio</li>
-              <li>Heroku</li>
-              <li>Azure</li>
-              <li>Command Line / iTerm</li>
-              <li>Trello / Jira / Pivotal Tracker</li>
-            </ul>
-          </div>
+    </header>
+    <main>
+      <div class="container">
+        <div id="description" class="text-justify mb-5 mx-5">
+          <p>
+            My name is Anders Bo Rasmussen, I'm a Danish <strong>Back-end developer</strong>, just finished my <strong>bachelor of software development</strong>.
+            I spend most of my free time with my girlfriend, we love to travel around the country, and when I'm not with her, I play video games and hang out with my best friends.
+          </p>
+          <p>
+            <strong>I love comics!</strong> I am generally picky about my comics, but I'm always looking for new comics to read. I buy most of my comics from
+            <a href="http://www.comixology.eu">Comixology</a> and the others from <a href="http://www.darkhorse.com/">Dark Horse Comics</a>.
+            I like reading comics with a darker theme, like The Walking Dead, Marvel Zombies, or Aliens.
+          </p>
         </div>
-        <div class="row">
-          <div class="col-12 grey-text center">
-            <span class="underline"><a href="https://github.com/Anras573" target="_blank">You could also check out my <i class="fa fa-github"></i> GitHub.</a></span>
-          </div>
-        </div>
-      </div>
-
-      <div id="experience" class="section">
-        <h1 class="title">Experience</h1>
-        <div class="row">
-          <div class="col-12 grey-text">
-            <h2 class="company">Sigma Estimates</h2>
-            <strong>Software Developer</strong>
-            <p class="year"><strong>Jun. 2017 - Present</strong></p>
-            <div class="experience-content">
-              <p>
-                Sigma Estimates is a software company, specializing in calculation software for the construction industry.
-              </p>
-              <p>
-                Backend developer in a team of 3 developers. I am responsible for maintaining the build system and the development of Sigma's new cloud solution.
-              </p>
-              <p>
-                  The cloud solution is buildt using <strong>C#</strong>, <strong>CQRS</strong>, and <strong>SQL Server</strong>.
-              </p>
-            </div>
-            <div class="center">
-              <a href="https://sigmaestimates.dk" class="btn btn-blue" target="_blank">See Sigmaestimates.dk</a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 grey-text">
-            <h2 class="company">ALD Automotive</h2>
-            <strong>IT Developer</strong>
-            <p class="year"><strong>Sep. 2016 - May 2017</strong></p>
-            <div class="experience-content">
-              <p>
-                ALD Automotive is a French fleet managing and operational car leasing company.
-              </p>
-              <p>
-                Fullstack developer in a team of 6 developers. I am responsible for developing the new customer portal MyALD, and working closely with frontend consultants.
-              </p>
-              <p>
-                  MyALD is buildt using <strong>C#</strong>, <strong>MVC</strong>, <strong>.NET CORE</strong>, and <strong>SQL Server</strong>.
-              </p>
-            </div>
-            <div class="center">
-              <a href="http://www.aldautomotive.dk/" class="btn btn-blue" target="_blank">See Aldautomotive.dk</a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 grey-text">
-            <h2 class="company">Autobutler</h2>
-            <strong>Junior Software Developer</strong>
-            <p class="year"><strong>Oct. 2014 - Aug. 2016</strong></p>
-            <div class="experience-content">
-              <p>
-                Autobutler is an online workshop portal for carowners, who want an easy way to gather offers from different workshops near them.
-              </p>
-              <p>
-                Fullstack developer in a team of 10 developers. I am responsible for the daily operation of the application. I fix the bugs and make sure the users have a pleasant experience.
-              </p>
-              <p>
-                Autobutler is buildt using <strong>Ruby on Rails</strong> and <strong>PostgreSQL</strong> as the backend. <strong>Bootstrap</strong>, <strong>SASS</strong>, and <strong>React</strong> powers the frontend.
-              </p>
-            </div>
-            <div class="center">
-              <a href="https://www.autobutler.dk" class="btn btn-blue" target="_blank">See Autobutler.dk</a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 grey-text">
-            <h2 class="company">Autobutler</h2>
-            <strong>Developer Intern</strong>
-            <p class="year"><strong>June 2014 - Oct. 2014</strong></p>
-            <div class="experience-content">
-              <p>
-                During my internship at <strong>Autobutler</strong>, I was responsible for developing a benefit-system, allowing the car owners to see the benefits they get from other companies, by being part of <strong>Autobutler</strong>.
-              </p>
-              <p>
-                The entire system was developed using <strong>Ruby on Rails</strong> and <strong>PostgreSQL</strong> for the backend. Everything was tested using <strong>RSpec</strong>.
-              </p>
-              <p>
-                The frontend was build using <strong>SASS</strong>, <strong>Bootstrap</strong>, and <strong>jQuery</strong>.
-              </p>
-            </div>
-            <div class="center">
-              <a href="https://www.autobutler.dk" class="btn btn-blue" target="_blank">See Autobutler.dk</a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 grey-text">
-            <h2 class="company">Playnation.eu</h2>
-            <strong>Software Developer</strong>
-            <p class="year"><strong>Dec. 2013 - Mar. 2014</strong></p>
-            <div class="experience-content">
-              <p>
-                Part of a two-man team, focused on building an in-house version of <strong>GitHub</strong>.
-              </p>
-              <p>
-                The backend was done in <strong>Java</strong> and <strong>MySQL</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="education" class="section">
-        <h1 class="title">Education</h1>
-        <div class="row">
-          <div class="col-12 panel">
-            <div class="panel-section grey-text">
-              <h3>Bachelor of Software Development</h3>
-              <span class="year"><strong>2015-2016</strong></span>
-              <p>Erhvervsakademiet Lillebælt</p>
-            </div>
-          </div>
-          <div class="col-12 panel">
-            <div class="panel-section grey-text">
-              <h3>Academy Profession Graduate in Computer Science</h3>
-              <span class="year"><strong>2012-2015</strong></span>
-              <p>Erhvervsakademiet Sjælland</p>
-            </div>
-          </div>
-        </div>
-
-        <div id="certificates">
-          <h1 class="title">Certificates</h1>
-          <div class="row">
-            <div class="col-12 panel">
-              <div class="panel-section grey-text">
-                <h3>Ruby Programming for Beginners</h3>
-                <span class="year"><strong>March 2016</strong></span>
-                <div class="row">
-                  <div class="col-4 pull-right">
-                    <img src="img/logos/udemy.svg" alt="udemy" width="100" />
+        <div id="experience" class="text-justify mb-5 mx-sm-5">
+          <div class="card mb-3 border-0">
+            <div class="card-block">
+              <h2 class="text-center">Experience</h2>
+              <ul class="list-unstyled">
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">Sigma Estimates</h4>
+                    <h5 class="mt-0 mb-1">Software Developer</h5>
+                    <p class="year"><strong>Jun. 2017 - Present</strong></p>
+                    <p>
+                      Sigma Estimates is a software company, specializing in calculation software for the construction industry.
+                    </p>
+                    <p>
+                      Backend developer in a team of 3 developers. I am responsible for maintaining the build system and the development of Sigma's new cloud solution.
+                    </p>
+                    <p>
+                        The cloud solution is buildt using <strong>C#</strong>, <strong>CQRS</strong>, and <strong>SQL Server</strong>.
+                    </p>
                   </div>
-                  <div class="col-8">
-                    <a href="http://ude.my/UC-0BO4PW8E" target="_blank">Udemy, License UC-0BO4PW8E</a>
+                </li>
+                <hr>
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">ALD Automotive</h4>
+                    <h5 class="mt-0 mb-1">IT Developer</h5>
+                    <p class="year"><strong>Sep. 2016 - May 2017</strong></p>
+                    <p>
+                      ALD Automotive is a French fleet managing and operational car leasing company.
+                    </p>
+                    <p>
+                      Fullstack developer in a team of 6 developers. I am responsible for developing the new customer portal MyALD, and working closely with frontend consultants.
+                    </p>
+                    <p>
+                        MyALD is buildt using <strong>C#</strong>, <strong>MVC</strong>, <strong>.NET CORE</strong>, and <strong>SQL Server</strong>.
+                    </p>
                   </div>
-                </div>
+                </li>
+                <hr>
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">Autobutler</h4>
+                    <h5 class="mt-0 mb-1">Junior Software Developer</h5>
+                    <p class="year"><strong>Oct. 2014 - Aug. 2016</strong></p>
+                    <p>
+                      Autobutler is an online workshop portal for carowners, who want an easy way to gather offers from different workshops near them.
+                    </p>
+                    <p>
+                      Fullstack developer in a team of 10 developers. I am responsible for the daily operation of the application. I fix the bugs and make sure the users have a pleasant experience.
+                    </p>
+                    <p>
+                      Autobutler is buildt using <strong>Ruby on Rails</strong> and <strong>PostgreSQL</strong> as the backend. <strong>Bootstrap</strong>, <strong>SASS</strong>, and <strong>React</strong> powers the frontend.
+                    </p>
+                  </div>
+                </li>
+                <hr>
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">Autobutler</h4>
+                    <h5 class="mt-0 mb-1">Developer Intern</h5>
+                    <p class="year"><strong>June 2014 - Oct. 2014</strong></p>
+                    <p>
+                      During my internship at <strong>Autobutler</strong>, I was responsible for developing a benefit-system, allowing the car owners to see the benefits they get from other companies, by being part of <strong>Autobutler</strong>.
+                    </p>
+                    <p>
+                      The entire system was developed using <strong>Ruby on Rails</strong> and <strong>PostgreSQL</strong> for the backend. Everything was tested using <strong>RSpec</strong>.
+                    </p>
+                    <p>
+                      The frontend was build using <strong>SASS</strong>, <strong>Bootstrap</strong>, and <strong>jQuery</strong>.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="education" class="mb-5 mx-sm-5">
+          <div class="card mb-3 border-0">
+            <div class="card-block">
+              <h2 class="text-center">Education</h2>
+              <ul class="list-unstyled">
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">Bachelor of Software Development</h4>
+                    <p class="year"><strong>2015-2016</strong></p>
+                    <p>Erhvervsakademiet Lillebælt</p>
+                  </div>
+                </li>
+                <hr>
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">Academy Profession Graduate in Computer Science</h4>
+                    <p class="year"><strong>2012-2015</strong></p>
+                    <p>Erhvervsakademiet Sjælland</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="volunteer" class="mb-5 mx-sm-5">
+          <div class="card mb-3 border-0">
+            <div class="card-block">
+              <h2 class="text-center">Volunteer Experience</h2>
+              <ul class="list-unstyled">
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">Event Crew</h4>
+                    <h5 class="mt-0 mb-1">Sørby E-sport</h5>
+                    <p class="year"><strong>Aug. 2017 - present</strong></p>
+                    <p>Science and Technology</p>
+                  </div>
+                </li>
+                <hr>
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">IT and Communication</h4>
+                    <h5 class="mt-0 mb-1">Roskilde Festival</h5>
+                    <p class="year"><strong>Jun. 2009 - Jun. 2009</strong></p>
+                    <p>Arts and Culture</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="skills" class="mb-5 mx-sm-5">
+          <h2 class="text-center">Skills</h2>
+          <div class="card-deck">
+            <div class="card mb-3">
+              <div class="card-block">
+                <h3 class="card-title">Frontend</h3>
+                <hr>
+                <ul class="list-unstyled">
+                  <li>HTML / ERB / Jade (Pug)</li>
+                  <li>CSS / SASS / Bootstrap</li>
+                  <li>JavaScript / jQuery / AngularJS</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="card-block">
+                <h3 class="card-title">Backend</h3>
+                <hr>
+                <ul class="list-unstyled">
+                  <li>Java</li>
+                  <li>C# (MVC, .NET CORE)</li>
+                  <li>Ruby on Rails</li>
+                  <li>MySQL / MSSQL / PostgreSQL</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="card-block">
+                <h3 class="card-title">Toolstack</h3>
+                <hr>
+                <ul class="list-unstyled">
+                  <li>Git / GitHub / BitBucket / SVN</li>
+                  <li>Atom / Netbeans / Visual Studio</li>
+                  <li>Heroku / Azure</li>
+                  <li>Command Line / iTerm / PowerShell</li>
+                  <li>Trello / Jira / Pivotal Tracker</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div id="contact" class="section">
-        <h1 class="title">Contact</h1>
-        <div class="row">
-          <img class="contact-img" src="img/AndersB_bottom_optimized.jpg" alt="Contact Picture">
-          <div class="col-12 grey-text center">
-            <strong>You can always find me on</strong> <br>
-            <a href="https://dk.linkedin.com/in/anders-bo-rasmussen-67693121" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a> <br>
-            <a href="https://github.com/Anras573" target="_blank"><i class="fa fa-github"></i> GitHub</a> <br>
-            Or you can<br>
+        <div id="certificates" class="mb-5 mx-sm-5">
+          <div class="card mb-3 border-0">
+            <div class="card-block">
+              <h2 class="text-center">Certificates</h2>
+              <ul class="list-unstyled">
+                <li class="media">
+                  <div class="media-body">
+                    <h4 class="mt-0 mb-1">Ruby Programming for Beginners</h4>
+                    <h5 class="mt-0 mb-1">Udemy</h5>
+                    <p class="year"><strong>March 2016</strong></p>
+                    <a href="http://ude.my/UC-0BO4PW8E" target="_blank">Udemy, License UC-0BO4PW8E</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="center">
-            <a href="mailto:anras573@gmail.com" class="btn btn-blue">Send Me An Email</a>
+        </div>
+        <div id="contact" class="mx-sm-5">
+          <h2 class="text-center">Contact</h2>
+          <div class="card border-0">
+            <div class="text-center">
+              <img class="card-img-top rounded-circle contact-photo" src="img/AndersB_bottom.png" alt="Contact picture">
+            </div>
+            <div class="card-block text-center">
+              <p><strong>You can always find me on</strong></p>
+              <p><a href="https://dk.linkedin.com/in/anders-bo-rasmussen-67693121" target="_blank">LinkedIn</a></p>
+              <p><a href="https://github.com/Anras573" target="_blank">GitHub</a></p>
+              <p>Or you can</p>
+              <p><a href="mailto:anras573@gmail.com" class="btn btn-primary">Send Me An Email</a></p>
+            </div>
           </div>
         </div>
       </div>
+    </main>
 
-      <div class="footer">
-        <div class="center">
-          <a href="#about" class="btn btn-blue">
-            Back To Top
-            <i class="arrow-up"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <script src="dist/assets/js/app.min.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function (b, o, i, l, e, r) {
