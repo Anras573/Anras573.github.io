@@ -20,3 +20,12 @@ hr {
 img.contact-photo {
   max-width: 120px;
 }
+
+a.undecorated {
+  text-decoration: none;
+}
+
+svg.svg-icon {
+  width: 25px;
+  height: 25px;
+}

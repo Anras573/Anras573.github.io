@@ -1,0 +1,16 @@
+mixin volunteer(department, place, timespan, type)
+  li.media
+    .media-body
+      h4.mt-0.mb-1= department
+      h5.mt-0.mb-= place
+      p #[strong= timespan]
+      p= type
+
+#volunteer.mb-5.mx-3
+  .card.mb-3.border-0
+    .card-block
+      h2.text-center Volunteer Experience
+      ul.list-unstyled
+        +volunteer('Event Crew', 'Sørby E-sport', 'Aug. 2017 - present', 'Science and Technology')
+        hr
+        +volunteer('IT and Communication', 'Roskilde Festival', 'Jun. 2009 - Jun. 2009', 'Arts and Culture')
