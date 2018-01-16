@@ -1,0 +1,17 @@
+mixin svgLink(title, url, id)
+  span
+    a(class='undecorated', href=url, target='_blank')
+      svg(class='svg-icon mx-2 align-middle', aria-hidden='true', title=title)
+        use(xlink:href= 'dist/assets/svg/sprites.svg#' + id)
+
+#contact.mx-3
+  h2.text-center Contact
+  .card.border-0
+    .text-center.mb-3
+      img.card-img-top.rounded-circle.contact-photo(src='img/AndersB_bottom.png', alt='Contact Picture')
+    
+    .card-block.text-center.mb-3
+      p #[strong You can always find me on]
+      +svgLink('Linkedin', 'https://dk.linkedin.com/in/anders-bo-rasmussen-67693121', 'si-awesome-linkedin-square')
+      +svgLink('GitHub', 'https://github.com/Anras573', 'si-awesome-github-square')
+      +svgLink('Email', 'mailto:anras573@gmail.com', 'si-awesome-envelope-square')
