@@ -1,10 +1,8 @@
-var gulp = require('gulp');
-var server = require('gulp-webserver');
+import connect from 'gulp-connect';
 
-gulp.task('server', () => {
-  gulp.src('')
-    .pipe(server({
-      livereload: true,
-      open: true
-    }));
-});
+export function server() {
+  return connect.server({
+    root: './',
+    livereload: true
+  });
+}

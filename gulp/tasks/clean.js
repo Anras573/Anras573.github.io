@@ -1,6 +1,3 @@
-var gulp = require('gulp');
-var del = require('del');
+import del from 'del';
 
-gulp.task('clean', () => {
-  return del('dist/**');
-});
+export const clean = () => del([ 'assets' ]);
