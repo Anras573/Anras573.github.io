@@ -1,10 +1,14 @@
-var gulp = require('gulp');
-var pug = require('gulp-pug');
+import connect from 'gulp-connect';
+import gulp from 'gulp';
+import gulpPug from 'gulp-pug';
 
-gulp.task('pug', () => {
-  return gulp.src('src/pug/index.pug')
-    .pipe(pug({
+import { paths } from './paths';
+
+export function pug() {
+  return gulp.src(paths.pug.index)
+    .pipe(gulpPug({
       pretty: true
     }))
     .pipe(gulp.dest('./'))
-});
+    .pipe(connect.reload());
+}

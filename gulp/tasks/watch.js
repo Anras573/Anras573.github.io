@@ -1,6 +1,10 @@
-var gulp = require('gulp');
+import gulp from 'gulp';
 
-gulp.task('watch', (done) => {
-   gulp.watch(['src/js/**/*.js', 'src/css/**/*.css'], ['minify']);
-   gulp.watch(['src/pug/*.pug'], ['pug']);
-});
+import { minifyCss } from './minify';
+import { paths } from './paths';
+import { pug } from './pug';
+
+export function watch() {
+    gulp.watch(paths.styles.src, minifyCss);
+    gulp.watch(paths.pug.src, pug);
+}

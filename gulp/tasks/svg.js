@@ -1,8 +1,10 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
+import concat from 'gulp-concat';
+import gulp from 'gulp';
 
-gulp.task('svg', () => {
-  gulp.src('src/svg/**/*.svg')
+import { paths } from './paths';
+
+export function svg() {
+  return gulp.src(paths.svgs.src)
     .pipe(concat('sprites.svg'))
-    .pipe(gulp.dest('dist/assets/svg'))
-});
+    .pipe(gulp.dest(paths.svgs.dest));
+}
