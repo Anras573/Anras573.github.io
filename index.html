@@ -223,6 +223,31 @@
         </div>
       </div>
     </main>
+    <div class="accordion fixed-bottom">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">
+            <button type="button" data-toggle="collapse" data-target="#chatwindow">Chat</button>
+          </h5>
+        </div>
+        <div class="collapse show" id="chatwindow">
+          <div class="card-body">
+            <div id="chat"></div>
+            <p>Lorem Ipsum</p>
+          </div>
+          <div class="card-footer">
+            <form id="chatForm" autocomplete="off">
+              <div class="input-group">
+                <input class="form-control" id="chatMessage" type="text" name="message" placeholder="Ask me anything...">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
       (function (b, o, i, l, e, r) {
         b.GoogleAnalyticsObject = l;
@@ -239,5 +264,6 @@
       ga('create', 'UA-60332501-3', 'auto');
       ga('send', 'pageview');
     </script>
+    <script src="dist/assets/js/app.min.js"></script>
   </body>
 </html>
