@@ -8,7 +8,7 @@ import { svg } from'./gulp/tasks/svg';
 import { watch } from './gulp/tasks/watch';
 
 const build = gulp.series(clean, gulp.parallel(minifyCss, pug), svg);
-const dev = gulp.series(clean, gulp.parallel(minifyCss, pug), svg, gulp.parallel(server, watch));
+const dev = gulp.series(build, gulp.parallel(server, watch));
 
 gulp.task('build', build);
 gulp.task('dev', dev);
