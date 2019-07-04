@@ -4,23 +4,22 @@
   "description": "My online resume",
   "main": "index.html",
   "dependencies": {
-    "bootstrap": "^4.1.3",
-    "jquery": "^3.3.1",
-    "natives": "^1.1.4",
-    "popper.js": "^1.14.4"
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "natives": "^1.1.6",
+    "popper.js": "^1.15.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-clean-css": "^3.10.0",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.7.0",
-    "gulp-pug": "^3.3.0",
+    "gulp-pug": "^4.0.1",
     "gulp-watch": "^5.0.1",
-    "require-all": "^2.2.0",
-    "run-sequence": "^1.2.2"
+    "require-all": "^3.0.0"
   },
   "scripts": {
     "dev": "gulp dev",
