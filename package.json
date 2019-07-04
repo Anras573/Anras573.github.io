@@ -17,7 +17,7 @@
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.7.0",
-    "gulp-pug": "^3.3.0",
+    "gulp-pug": "^4.0.1",
     "gulp-watch": "^5.0.1",
     "require-all": "^2.2.0",
     "run-sequence": "^1.2.2"
