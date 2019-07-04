@@ -20,7 +20,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-watch": "^5.0.1",
     "require-all": "^2.2.0",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^2.2.1"
   },
   "scripts": {
     "dev": "gulp dev",
