@@ -1,0 +1,40 @@
+@import '../../assets/sass/animations.scss';
+@import '../../assets/sass/colors.scss';
+@import '../../assets/sass/variables.scss';
+
+.home {
+    h1 {
+        color: $black;
+        font-weight: bold;
+        font-size: 50px;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: $zNormal;
+        
+        animation: appear 1s ease;
+        animation-delay: .9s;
+        animation-fill-mode: forwards;
+    }
+    
+    h2 {
+        color: $black;
+        font-weight: 200;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: $zNormal;
+    
+        animation: appearSubtitle 1s ease;
+        animation-delay: .7s;
+        animation-fill-mode: forwards;
+    }
+
+    canvas {
+        position: absolute;
+        bottom: 0;
+        z-index: $zBackground;
+    }
+}

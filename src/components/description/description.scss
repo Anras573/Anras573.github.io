@@ -1,0 +1,32 @@
+@import '../../assets/sass/colors.scss';
+
+.description {
+    color: $white;
+
+    p {
+        font-size: 14px;
+    }
+
+    .hello {
+        text-align: center;
+
+        .profile {
+            border-radius: 50%;
+            max-width: 200px;
+        }
+    }
+
+    .col-md-50 {
+        width: 100%;
+        float: left;
+        padding: 15px;
+    }
+
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .col-md-50 {
+        width: 50% !important;
+    }
+}

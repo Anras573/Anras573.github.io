@@ -1,0 +1,37 @@
+@import '../../assets/sass/animations.scss';
+@import '../../assets/sass/colors.scss';
+@import '../../assets/sass/variables.scss';
+
+body {
+    padding-top: 50px;
+}
+
+.header {
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100vw;
+    z-index: $zNavbar;
+
+    li {
+        list-style-type: none;
+        margin-bottom: .5rem;
+    }
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+
+    hr {
+        border-color: $white;
+        float: right;
+        margin: .7rem;
+        width: 50px;
+    }
+
+    .active hr {
+        animation: expandHr .5s ease;
+        animation-fill-mode: forwards;
+    }
+}

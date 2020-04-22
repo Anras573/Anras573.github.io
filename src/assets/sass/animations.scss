@@ -1,0 +1,39 @@
+@keyframes appear {
+    from {
+        opacity: 0;
+        top: -10px;
+    }
+    to {
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@keyframes appearSubtitle {
+    from {
+        opacity: 0;
+        top: -10px;
+    }
+    to {
+        opacity: 0.8;
+        top: 35%;
+    }
+}
+
+@keyframes expandHr {
+    from {
+        width: 50px;
+    }
+    to {
+        width: 75px;
+    }
+}
+
+@keyframes collapseHr {
+    from {
+        width: 75px;
+    }
+    to {
+        width: 50px;
+    }
+}
