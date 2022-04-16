@@ -1,0 +1,59 @@
+﻿body {
+    --text-color: #222;
+    --background-color: #fefefe;
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --background-color: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --text-color: #eee;
+        --background-color: #121212;
+    }
+
+    body.light-theme {
+        --text-color: #222;
+        --background-color: #fefefe;
+    }
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 920px;
+}
+
+article {
+    padding: 20px 0;
+}
+
+img.rounded {
+    border-radius: 50%;
+    max-width: 280px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
