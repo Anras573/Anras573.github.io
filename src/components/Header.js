@@ -1,6 +1,9 @@
+import React from 'react';
+
 function Header() {
   return(
-    <header className="bg-white overflow-hidden lg:flex">
+    <header className="bg-white overflow-hidden lg:flex pt-10 lg:pt-0">
+      <div id="Home" className="sr-only"></div>
       <div className="text-center self-center py-10 lg:w-1/2 lg:py-0">
         <h1 className="text-4xl tracking-tight font-extrabold text-gray-900">
           <span className="block">Anders Bo Rasmussen</span>

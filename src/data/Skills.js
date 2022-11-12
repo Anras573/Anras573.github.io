@@ -2,8 +2,10 @@ export const skillsData = [
   {
     category: 'Backend',
     list: [
-      { name: 'C#', value: 199 },
-      { name: 'ASP.NET MVC5', value: 184 }
+      { name: 'C#', value: 236 },
+      { name: 'ASP.NET MVC5', value: 210 },
+      { name: 'ASP.NET Core', value: 241 },
+      { name: 'Java', value: 231 }
     ]
   },
   {
@@ -17,9 +19,41 @@ export const skillsData = [
     ]
   },
   {
+    category: 'Infrastructure',
+    list: [
+      { name: 'Azure', value: 199 },
+      { name: 'Domain Driven Design', value: 192 }
+    ]
+  }
+]
+
+export const unmeasuredSkillsData = [
+  {
     category: 'Backend',
     list: [
-      { name: 'C#', value: 205 }
+      'Ruby on Rails'
+    ]
+  },
+  {
+    category: 'Frontend',
+    list: [
+      'Typescript',
+      'Angular',
+      'jQuery',
+      'SASS/SCSS',
+      'Bootstrap'
+    ]
+  },
+  {
+    category: 'Infrastructure',
+    list: [
+      'Elastic Search',
+      'Redis',
+      'MS SQL',
+      'PostegreSQL',
+      'IIS',
+      'Git',
+      'Visual Studio'
     ]
   }
 ]

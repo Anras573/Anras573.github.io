@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { experienceData } from '../data/Experience';
 
 function Experience() {
@@ -7,7 +9,7 @@ function Experience() {
       : 'md:ml-auto md:pl-16';
 
     return (
-      <div className="relative z-10">
+      <div key={experience.occupancy} className="relative z-10">
         <div className="h-24 w-24 bg-white rounded-full shadow-md border-4 border-white xs:absolute md:mx-auto md:left-0 md:right-0 flex justify-center items-center">
           <span className="font-bold text-xl text-blue-400">{experience.startYear}</span>
         </div>
@@ -29,6 +31,7 @@ function Experience() {
 
   return(
     <article className="container mx-auto ml:bg-white rounded p-10 m-10 relative px-6 flex flex-col space-y-8">
+      <div id="Experience" className=""></div>
       <div className="absolute z-0 w-2 h-full bg-white shadow-md inset-0 left-17 md:mx-auto md:right-0 md:left-0"></div>
       {experience}
     </article>
