@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    background-color: var(--secondary-bg-color);
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+main {
+    background-color: var(--primary-bg-color);
+}

@@ -1,0 +1,13 @@
+header {
+    background-color: var(--secondary-bg-color);
+    padding: 1rem;
+}
+
+.icon-list {
+    list-style: none;
+}
+
+.icon-list, address {
+    display: inline-block;
+    margin: 0;
+}

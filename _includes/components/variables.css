@@ -1,0 +1,12 @@
+:root {
+    --a: #225476;
+    --b: #3fcef6;
+    --c: #318ead;
+    --d: #eee;
+    --e: #fff;
+
+    --primary-bg-color: var(---e);
+    --secondary-bg-color: var(--d);
+
+    --color-link: var(--b);
+}
