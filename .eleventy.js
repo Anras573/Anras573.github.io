@@ -31,4 +31,20 @@ module.exports = function(eleventyConfig) {
         return `<span>${icon}<span>
         <a href="${profile.url}" target="_blank">${profile.username}</a> <span>(${profile.network})</span>`;
     });
+
+    eleventyConfig.addShortcode("daterange", function(startDate, endDate)
+    {
+        var start = new Date(startDate);
+        var startHtml = `<time datetime="${startDate}">${start.toLocaleDateString("en-US", { month: "long", year: "numeric" })}</time>`;
+
+        if (endDate == null)
+        {
+            return `${startHtml} - Present`;
+        }
+
+        var end = new Date(endDate);
+        var endHtml = `<time datetime="${endDate}">${end.toLocaleDateString("en-US", { month: "long", year: "numeric" })}</time>`;
+
+        return `${startHtml} - ${endHtml}`;
+    });
 };

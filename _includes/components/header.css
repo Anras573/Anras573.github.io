@@ -1,10 +1,15 @@
-header {
+.header {
     background-color: var(--secondary-bg-color);
     padding: 1rem;
 }
 
+.header h2 {
+    color: var(--a);
+}
+
 .icon-list {
     list-style: none;
+    padding: 0;
 }
 
 .icon-list, address {

@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: var(--secondary-bg-color);
+    background-color: var(--primary-bg-color);
 }
 
 a {
@@ -10,4 +10,5 @@ a {
 
 main {
     background-color: var(--primary-bg-color);
+    padding: 1rem;
 }

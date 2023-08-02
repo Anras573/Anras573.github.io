@@ -5,7 +5,7 @@
     --d: #eee;
     --e: #fff;
 
-    --primary-bg-color: var(---e);
+    --primary-bg-color: var(--e);
     --secondary-bg-color: var(--d);
 
     --color-link: var(--b);
