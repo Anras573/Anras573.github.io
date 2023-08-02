@@ -8,5 +8,8 @@
     --primary-bg-color: var(--e);
     --secondary-bg-color: var(--d);
 
-    --color-link: var(--b);
+    --link-color: var(--b);
+    --link-hover-color: var(--c);
+
+    --heading-color: var(--a);
 }

@@ -1,0 +1,21 @@
+<section>
+    <h3>Education</h3>
+    <div>
+        {% for education in resume.education %}
+            <article>
+                <header>
+                    <h4>{{ education.area }}</h4>
+                    <div>
+                        <div>
+                            <strong><a href="{{ education.url }}" target="_blank">{{ education.institution }}</a></strong>
+                        </div>
+                        <div>
+                            {% daterange education.startDate, education.endDate %}
+                        </div>
+                    </div>
+                </header>
+                <p>{{ education.studyType }}</p>
+            </article>
+        {% endfor %}
+    </div>
+</section>
