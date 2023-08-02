@@ -1,0 +1,21 @@
+<section>
+    <h3>Volunteer</h3>
+    <div>
+        {% for volunteer in resume.volunteer %}
+            <article>
+                <header>
+                    <h4>{{ volunteer.position }}</h4>
+                    <div>
+                        <div>
+                            <strong><a href="{{ volunteer.url }}" target="_blank">{{ volunteer.organization }}</a></strong>
+                        </div>
+                        <div>
+                            {% daterange volunteer.startDate, volunteer.endDate %}
+                        </div>
+                    </div>
+                </header>
+                <p>{{ volunteer.summary }}</p>
+            </article>
+        {% endfor %}
+    </div>
+</section>

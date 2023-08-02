@@ -7,7 +7,7 @@
                     <h4>{{ work.position }}</h4>
                     <div>
                         <div>
-                            <strong>{{ work.name }}</strong>
+                            <strong><a href="{{ work.url }}" target="_blank">{{ work.name }}</a></strong>
                         </div>
                         <div>
                             {% daterange work.startDate, work.endDate %}
