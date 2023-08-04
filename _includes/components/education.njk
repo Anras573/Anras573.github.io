@@ -4,10 +4,10 @@
         {% for education in resume.education %}
             <article>
                 <header>
-                    <h4>{{ education.area }}</h4>
+                    <h4><a href="{{ education.url }}" target="_blank">{{ education.institution }}</a></h4>
                     <div>
                         <div>
-                            <strong><a href="{{ education.url }}" target="_blank">{{ education.institution }}</a></strong>
+                            <strong>{{ education.area }}</strong>
                         </div>
                         <div>
                             {% daterange education.startDate, education.endDate %}

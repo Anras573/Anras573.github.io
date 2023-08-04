@@ -1,0 +1,31 @@
+<section>
+    <h3>Projects</h3>
+    <div>
+        {% for project in resume.projects %}
+            <article>
+                <header>
+                    <h4><a href="{{ project.url }}" target="_blank">{{ project.name }}</a></h4>
+                    <div>
+                        <div>
+                            <strong>{{ project.type }}</strong>
+                        </div>
+                        <div>
+                            {% daterange project.startDate, project.endDate %}
+                        </div>
+                    </div>
+                </header>
+                <ul class="inline-pills">
+                    {% for keyword in project.keywords %}
+                        <li>{{ keyword }}</li>
+                    {% endfor %}
+                </ul>
+                <p>{{ project.description }}</p>
+                <ul>
+                    {% for highlight in project.highlights %}
+                        <li>{{ highlight }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+        {% endfor %}
+    </div>
+</section>
