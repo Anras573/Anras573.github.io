@@ -1,0 +1,13 @@
+﻿@using PageGenerator.Models
+
+<article>
+    <h2 class="text-center">Experience</h2>
+    @foreach(var experience in ExperienceList.GetExperiences())
+    {
+        <div class="container">
+            <h3>@experience.Company</h3>
+            <h4>@experience.JobTitle</h4>
+            <p><strong>@experience.TimeSpan</strong></p>
+        </div>
+    }
+</article>

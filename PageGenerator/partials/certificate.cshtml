@@ -1,0 +1,17 @@
+﻿@using PageGenerator.Models
+
+<article>
+    <h2 class="text-center">Certificates & Courses</h2>
+    @foreach(var certificate in CertificateList.GetCertificates())
+    {
+        <div class="container">
+            <h3>@certificate.Title</h3>
+            <h4>@certificate.Issuer</h4>
+            <p><strong>Issued @certificate.IssuedAt - @certificate.ExpiresAt</strong></p>
+            @if(!string.IsNullOrWhiteSpace(certificate.CredentialsUrl))
+            {
+                <p><a class="btn" href="@certificate.CredentialsUrl" target="_blank">Credential</a></p>
+            }
+        </div>
+    }
+</article>
