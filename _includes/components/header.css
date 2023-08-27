@@ -12,3 +12,15 @@
     display: inline-block;
     margin: 0;
 }
+
+.pill {
+    background-color: var(--a);
+    border-radius: 1rem;
+    color: var(--primary-bg-color);
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0 0.5rem;
+    padding: 0.25rem 0.5rem;
+    text-transform: uppercase;
+}
