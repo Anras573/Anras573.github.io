@@ -28,7 +28,7 @@ module.exports = function(eleventyConfig) {
                 break;
         }
 
-        return `<span>${icon}<span>
+        return `<span>${icon}</span>
         <a href="${profile.url}" target="_blank">${profile.username}</a> <span>(${profile.network})</span>`;
     });
 
@@ -46,5 +46,9 @@ module.exports = function(eleventyConfig) {
         let endHtml = `<time datetime="${endDate}">${end.toLocaleDateString("en-US", { month: "long", year: "numeric" })}</time>`;
 
         return `${startHtml} - ${endHtml}`;
+    });
+    
+    eleventyConfig.addShortcode("keywords", function (keywords) {
+       return keywords.map(keyword => `<span>${keyword}</span>`).join(", "); 
     });
 };

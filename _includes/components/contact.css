@@ -1,0 +1,19 @@
+﻿.contact {
+    border-bottom: var(--border-bottom);
+    padding: 1rem;
+}
+
+.icon-list {
+    list-style: none;
+    padding: 0;
+}
+
+.icon-list li span {
+    display: inline-block;
+    width: 20px;
+}
+
+.icon-list, address {
+    display: inline-block;
+    margin: 0;
+}

@@ -3,10 +3,14 @@ layout: layouts/main.njk
 ---
 <div class="grid-container">
     {% include 'components/header.njk' %}
+    <aside>
+        {% include 'components/contact.njk' %}
+        {% include 'components/skills.njk' %}
+        {% include 'components/education.njk' %}
+    </aside>
     <main>
+        {% include 'components/summary.njk' %}
         {% include 'components/experience.njk' %}
         {% include 'components/volunteer.njk' %}
-        {% include 'components/education.njk' %}
     </main>
 </div>
-

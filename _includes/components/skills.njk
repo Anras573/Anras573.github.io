@@ -1,0 +1,10 @@
+﻿<section class="skills">
+    <h2>Technical Skills</h2>
+    {% for skill in resume.skills %}
+        <h3>{{ skill.name }}</h3>
+        <h4>{{ skill.level }}</h4>
+        <div>
+            {% keywords skill.keywords %}
+        </div>
+    {% endfor %}
+</section>

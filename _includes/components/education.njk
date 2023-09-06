@@ -1,21 +1,13 @@
-<section>
-    <h3>Education</h3>
-    <div>
-        {% for education in resume.education %}
-            <article>
-                <header>
-                    <h4><a href="{{ education.url }}" target="_blank">{{ education.institution }}</a></h4>
-                    <div>
-                        <div>
-                            <strong>{{ education.area }}</strong>
-                        </div>
-                        <div>
-                            {% daterange education.startDate, education.endDate %}
-                        </div>
+<section class="education">
+    <h2>Education</h2>
+    {% for education in resume.education %}
+        <article>
+            <header>
+                <strong>{{ education.studyType }} in {{ education.area }} at {{ education.institution }}</strong>
+                    <div class="flex-end">
+                        {% daterange education.startDate, education.endDate %}
                     </div>
-                </header>
-                <p>{{ education.studyType }}</p>
-            </article>
-        {% endfor %}
-    </div>
+            </header>
+        </article>
+    {% endfor %}
 </section>

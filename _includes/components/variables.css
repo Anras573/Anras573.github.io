@@ -2,7 +2,7 @@
     --a: #225476;
     --b: #3fcef6;
     --c: #318ead;
-    --d: #eee;
+    --d: #ddd;
     --e: #fff;
 
     --primary-bg-color: var(--e);
@@ -12,4 +12,6 @@
     --link-hover-color: var(--c);
 
     --heading-color: var(--a);
+    
+    --border-bottom: 1px dashed var(--secondary-bg-color);
 }

@@ -1,26 +1,11 @@
 .header {
-    background-color: var(--secondary-bg-color);
-    padding: 1rem;
+    border-bottom: var(--border-bottom);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
 }
 
-.icon-list {
-    list-style: none;
-    padding: 0;
-}
-
-.icon-list, address {
-    display: inline-block;
-    margin: 0;
-}
-
-.pill {
-    background-color: var(--a);
-    border-radius: 1rem;
-    color: var(--primary-bg-color);
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin: 0 0.5rem;
-    padding: 0.25rem 0.5rem;
-    text-transform: uppercase;
+.header {
+    float: left;
 }
