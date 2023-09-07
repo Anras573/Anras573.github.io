@@ -6,6 +6,6 @@
     padding: 0 1rem;
 }
 
-.header {
-    float: left;
+.header h2 {
+    font-size: 1.5rem;
 }

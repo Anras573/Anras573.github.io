@@ -1,6 +1,9 @@
 body {
-    margin: 0;
     background-color: var(--primary-bg-color);
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -12,21 +15,24 @@ a:hover {
     color: var(--link-hover-color);
 }
 
-main {
-    background-color: var(--primary-bg-color);
-    padding: 1rem;
-}
-
 h1, h2 {
     color: var(--heading-color);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
 
 h1, h2, h3, h4 {
     margin: .4em 0;
 }
 
-strong {
-    color: var(--c);
+h2 {
+    font-size: 1.2rem;
+}
+
+h3 {
+    color: var(--subheading-color);
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 main {

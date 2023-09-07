@@ -1,0 +1,20 @@
+@media print {
+    .grid-container {
+        display: block;
+        width: 100%;
+    }
+
+    aside {
+        float: left;
+        max-width: 33%;
+    }
+
+    main {
+        float: right;
+        max-width: 66%;
+    }
+
+    .print-d-none {
+        display: none;
+    }
+}

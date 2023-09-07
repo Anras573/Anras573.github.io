@@ -1,29 +1,24 @@
-<section>
-    <h3>Experience</h3>
-    <div>
-        {% for work in resume.work %}
-            <article>
-                <header>
-                    <h4>{{ work.position }}</h4>
+<section class="experience">
+    <h2>Experience</h2>
+    {% for work in resume.work %}
+        <article>
+            <header>
+                <h3>{{ work.position }} at {{ work.name }}</h3>
+                <div>
                     <div>
-                        <div>
-                            <strong><a href="{{ work.url }}" target="_blank">{{ work.name }}</a></strong>
-                        </div>
-                        <div>
-                            {% daterange work.startDate, work.endDate %}
-                        </div>
-                        <div>
-                            <address>{{ work.location }}</address>
-                        </div>
+                        {% daterange work.startDate, work.endDate %}
                     </div>
-                </header>
-                <p>{{ work.summary }}</p>
-                <ul>
-                    {% for highlight in work.highlights %}
-                        <li>{{ highlight }}</li>
-                    {% endfor %}
-                </ul>
-            </article>
-        {% endfor %}
-    </div>
+                    <div>
+                        <address>{{ work.location }}</address>
+                    </div>
+                </div>
+            </header>
+            <p>{{ work.summary }}</p>
+            <ul>
+                {% for highlight in work.highlights %}
+                    <li>{{ highlight }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+    {% endfor %}
 </section>
