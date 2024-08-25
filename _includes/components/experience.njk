@@ -3,14 +3,9 @@
     {% for work in resume.work %}
         <article>
             <header>
-                <h3>{{ work.position }} at {{ work.name }}</h3>
+                <h3 class="d-inline-block">{{ work.position }} at {{ work.name }}</h3>, <address class="d-inline-block">{{ work.location }}</address>
                 <div>
-                    <div>
-                        {% daterange work.startDate, work.endDate %}
-                    </div>
-                    <div>
-                        <address>{{ work.location }}</address>
-                    </div>
+                    {% daterange work.startDate, work.endDate %}
                 </div>
             </header>
             <p>{{ work.summary }}</p>

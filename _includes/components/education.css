@@ -6,8 +6,3 @@
 .education article:first-of-type {
   margin-bottom: 1rem;
 }
-
-.flex-end {
-  display: flex;
-  justify-content: flex-end;
-}

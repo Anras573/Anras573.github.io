@@ -1,4 +1,9 @@
 @media print {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: smaller;
+    }
+
     .grid-container {
         display: block;
         width: 100%;
@@ -16,5 +21,13 @@
 
     .print-d-none {
         display: none;
+    }
+
+    .experience {
+        border-bottom: none;
+    }
+
+    .page-break {
+        page-break-before: always;
     }
 }

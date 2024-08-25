@@ -4,7 +4,7 @@
         <article>
             <header>
                 <h3>{{ education.studyType }} in {{ education.area }} at {{ education.institution }}</h3>
-                    <div class="flex-end">
+                    <div>
                         {% daterange education.startDate, education.endDate %}
                     </div>
             </header>
