@@ -1,0 +1,16 @@
+<section class="print-d-none volunteer">
+    <h2>Volunteer</h2>
+    <div>
+        {% for volunteer in resume.volunteer %}
+            <article>
+                <header>
+                    <h3>{{ volunteer.position }} at {{ volunteer.organization }}</h3>
+                    <div>
+                        {% daterange volunteer.startDate, volunteer.endDate %}
+                    </div>
+                </header>
+                <p>{{ volunteer.summary }}</p>
+            </article>
+        {% endfor %}
+    </div>
+</section>

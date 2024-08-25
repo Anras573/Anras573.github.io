@@ -1,0 +1,11 @@
+.profile {
+    border-bottom: var(--border-bottom);
+    display: flex;
+    justify-content: center;
+    padding: var(--section-padding);
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 150px;
+}

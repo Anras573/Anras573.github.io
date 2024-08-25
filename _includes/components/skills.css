@@ -1,0 +1,13 @@
+﻿.skills {
+    border-bottom: var(--border-bottom);
+    padding: var(--section-padding);
+}
+
+.skills h3 {
+    margin: .4rem 0 0;
+}
+
+.skills .level {
+    font-style: italic;
+    margin-bottom: .4rem;
+}

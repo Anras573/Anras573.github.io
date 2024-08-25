@@ -1,0 +1,21 @@
+:root {
+    --a: #225476;
+    --b: #3fcef6;
+    --c: #318ead;
+    --d: #ddd;
+    --e: #fff;
+
+    --primary-bg-color: var(--e);
+    --secondary-bg-color: var(--d);
+
+    --link-color: var(--b);
+    --link-hover-color: var(--c);
+
+    --heading-color: var(--a);
+    --subheading-color: var(--c);
+    
+    --border-bottom: 1px dashed var(--secondary-bg-color);
+    --section-padding: 0 1rem 1rem;
+
+    --gap: 10px;
+}

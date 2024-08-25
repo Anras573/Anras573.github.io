@@ -1,11 +1,15 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+/* TEAM */
+Developer: Anders Bo Rasmussen (Anras573) - Senior Software Engineer
 
-# TEAM
+/* THANKS */
+Thanks to: Open-source community, family, and supporters.
+Special thanks to: https://www.11ty.dev/ and https://jsonresume.org/
 
-    Anders Bo Rasmussen -- Software Developer -- Anras573
+/* SITE */
+Last Updated: 2024-08-25
+Standards: HTML5, CSS3, ES6
+Hosting: GitHub Pages
+Tools: Puppeteer, 11ty
 
-# TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
-    Bootstrap
+/* CONTACT */
+GitHub: github.com/anras573
