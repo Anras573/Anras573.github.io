@@ -1,8 +1,0 @@
-﻿.education {
-  border-bottom: var(--border-bottom);
-  padding: var(--section-padding);
-}
-
-.education article:first-of-type {
-  margin-bottom: 1rem;
-}
