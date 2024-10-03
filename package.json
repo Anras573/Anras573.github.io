@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Anras573/Anras573.github.io#readme",
   "dependencies": {
-    "puppeteer": "^23.4.1"
+    "puppeteer": "^23.5.0"
   },
   "keywords": [
     "resume",
