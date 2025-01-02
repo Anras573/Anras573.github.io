@@ -1,16 +1,16 @@
-const puppeteer = require('puppeteer');
-const fs = require('fs');
-const path = require('path');
+import { launch } from 'puppeteer';
+import { existsSync, mkdirSync } from 'fs';
+import { join } from 'path';
 
 (async () => {
-    const dist = path.join(__dirname, 'dist');
-    const filePath = path.join(dist, 'output.pdf');
+    const dist = join(import.meta.dirname, 'dist');
+    const filePath = join(dist, 'output.pdf');
 
-    if (!fs.existsSync(dist)) {
-        fs.mkdirSync(dist, { recursive: true });
+    if (!existsSync(dist)) {
+        mkdirSync(dist, { recursive: true });
     }
 
-    const browser = await puppeteer.launch();
+    const browser = await launch();
     const page = await browser.newPage();
 
     await page.goto('http://localhost:8080', { waitUntil: 'networkidle2' });

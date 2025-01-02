@@ -1,14 +1,18 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto;
-    
-    gap: var(--gap);
-
     margin: auto;
     max-width: 960px;
 }
 
-header {
-    grid-column: span 2;
+@media (min-width: 960px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;
+
+        gap: var(--gap);
+    }
+
+    header {
+        grid-column: span 2;
+    }
 }
