@@ -2,10 +2,31 @@ import eleventyFetch from "@11ty/eleventy-fetch";
 
 export default async function() {
     const url = "https://raw.githubusercontent.com/Anras573/json-resume/main/resume.json";
-    const response = await eleventyFetch(url, {
-        duration: "1d",
-        type: "json"
-    });
-
-    return response;
+    
+    try {
+        const response = await eleventyFetch(url, {
+            duration: "1d",
+            type: "json"
+        });
+        return response;
+    } catch (error) {
+        console.error("Failed to fetch resume data:", error);
+        // Return minimal fallback data to prevent build failure
+        return {
+            basics: {
+                name: "Anders Bo Rasmussen",
+                label: "Senior Software Engineer",
+                image: "",
+                summary: "Resume data temporarily unavailable.",
+                location: { city: "Sorø", countryCode: "DK" },
+                profiles: [],
+                email: "",
+                url: ""
+            },
+            work: [],
+            volunteer: [],
+            education: [],
+            skills: []
+        };
+    }
 }
