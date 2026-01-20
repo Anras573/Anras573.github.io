@@ -11,13 +11,15 @@ export default async function() {
         return response;
     } catch (error) {
         console.error("Failed to fetch resume data:", error);
+        console.error("Using minimal fallback data. Please check network connectivity.");
         // Return minimal fallback data to prevent build failure
+        // Note: Update these values if personal information changes
         return {
             basics: {
                 name: "Anders Bo Rasmussen",
                 label: "Senior Software Engineer",
                 image: "",
-                summary: "Resume data temporarily unavailable.",
+                summary: "Resume data temporarily unavailable. Please try again later.",
                 location: { city: "Sorø", countryCode: "DK" },
                 profiles: [],
                 email: "",
