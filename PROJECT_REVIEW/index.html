@@ -1,0 +1,508 @@
+<h1>Project Review: Anras573.github.io</h1>
+<p><strong>Date:</strong> January 20, 2026<br>
+<strong>Reviewer:</strong> GitHub Copilot<br>
+<strong>Project:</strong> Personal Online CV/Resume Website<br>
+<strong>Live URL:</strong> https://anbora.dk</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>This is a well-structured personal CV/resume website built using modern static site generation with 11ty (Eleventy). The project demonstrates good practices in web development, including separation of concerns, data-driven content, and automated deployment. The site is clean, professional, and optimized for both screen and print output.</p>
+<p><strong>Overall Rating: 8/10</strong></p>
+<hr>
+<h2>Project Overview</h2>
+<h3>Purpose</h3>
+<p>A personal online CV/resume for Anders Bo Rasmussen, a Senior Software Engineer. The website fetches resume data from a JSON Resume repository and generates a static HTML page with PDF generation capabilities.</p>
+<h3>Tech Stack</h3>
+<ul>
+<li><strong>Static Site Generator:</strong> 11ty (Eleventy) v3.1.2</li>
+<li><strong>Template Engine:</strong> Nunjucks (.njk)</li>
+<li><strong>Styling:</strong> CSS3 with custom properties (CSS variables)</li>
+<li><strong>PDF Generation:</strong> Puppeteer v24.35.0</li>
+<li><strong>Hosting:</strong> GitHub Pages with custom domain (anbora.dk)</li>
+<li><strong>Data Source:</strong> JSON Resume format from external GitHub repository</li>
+</ul>
+<hr>
+<h2>Strengths</h2>
+<h3>1. <strong>Architecture &amp; Code Organization</strong> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>Excellent separation of concerns:</strong> Components are well-organized in <code>_includes/components/</code> with paired <code>.njk</code> and <code>.css</code> files</li>
+<li><strong>Data-driven approach:</strong> Resume content is fetched from an external JSON source, making it easy to update without touching code</li>
+<li><strong>Modular components:</strong> Each section (header, experience, education, skills, etc.) is a separate reusable component</li>
+<li><strong>Clean configuration:</strong> <code>.eleventy.js</code> provides custom filters and shortcodes in a maintainable way</li>
+</ul>
+<h3>2. <strong>Modern Web Standards</strong> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>Responsive design:</strong> Grid layout that adapts from desktop (960px) to mobile</li>
+<li><strong>Semantic HTML:</strong> Proper use of HTML5 semantic elements (<code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;main&gt;</code>)</li>
+<li><strong>SEO optimized:</strong> Comprehensive meta tags including Open Graph and Twitter Card support</li>
+<li><strong>Print-friendly:</strong> Dedicated print styles with page-break controls for PDF generation</li>
+<li><strong>Web fonts:</strong> Google Fonts integration for typography (Roboto, Open Sans)</li>
+<li><strong>Accessibility:</strong> Alt text on images, semantic markup</li>
+</ul>
+<h3>3. <strong>Build &amp; Deployment Pipeline</strong> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>Automated CI/CD:</strong> GitHub Actions workflow for automatic deployment on push to master</li>
+<li><strong>Fast builds:</strong> 11ty builds in under 1 second (~0.90s)</li>
+<li><strong>Static output:</strong> No runtime dependencies, excellent performance</li>
+<li><strong>Custom domain:</strong> Proper CNAME configuration for anbora.dk</li>
+<li><strong>No Jekyll conflicts:</strong> <code>.nojekyll</code> file prevents Jekyll processing on GitHub Pages</li>
+</ul>
+<h3>4. <strong>Developer Experience</strong> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>Clear README:</strong> Good installation instructions and usage documentation</li>
+<li><strong>Simple commands:</strong> <code>npm run dev</code> for development, <code>npm run build</code> for production</li>
+<li><strong>Hot reload:</strong> Development server with live reloading</li>
+<li><strong>Version control:</strong> Proper <code>.gitignore</code> for Node.js, IDEs, and build artifacts</li>
+<li><strong>Package management:</strong> Clear dependency specification with engines requirement</li>
+</ul>
+<h3>5. <strong>CSS Quality</strong> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>CSS Variables:</strong> Centralized color scheme and spacing in <code>variables.css</code></li>
+<li><strong>CSS Minification:</strong> Inline styles are minified using <code>clean-css</code></li>
+<li><strong>No external CSS dependencies:</strong> Lightweight, no bloated frameworks</li>
+<li><strong>Mobile-first approach:</strong> Responsive breakpoints at 960px</li>
+<li><strong>Print optimization:</strong> Dedicated print media queries</li>
+</ul>
+<hr>
+<h2>Areas for Improvement</h2>
+<h3>1. <strong>Security Vulnerabilities</strong> ⚠️ <strong>Critical</strong></h3>
+<p><strong>Issue:</strong> Moderate severity vulnerability in <code>js-yaml</code> dependency</p>
+<pre><code>js-yaml &lt;3.14.2 || &gt;=4.0.0 &lt;4.1.1
+Severity: moderate
+Prototype pollution in merge (&lt;&lt;)
+</code></pre>
+<p><strong>Impact:</strong> This vulnerability exists in a transitive dependency through <code>@11ty/eleventy</code></p>
+<p><strong>Recommendation:</strong></p>
+<pre><code class="language-bash">npm audit fix
+</code></pre>
+<p>This should update to a patched version. If it persists, consider updating Eleventy or waiting for upstream fixes.</p>
+<p><strong>Priority:</strong> Medium (Low actual risk since this is a build-time dependency, not runtime)</p>
+<h3>2. <strong>Error Handling</strong> ⭐⭐⭐</h3>
+<p><strong>Issues:</strong></p>
+<ul>
+<li>No error handling in <code>_data/resume.js</code> if the external API fails</li>
+<li><code>generate-pdf.js</code> assumes localhost:8080 is running without checking</li>
+<li>No fallback if Google Fonts CDN fails to load</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<pre><code class="language-javascript">// In _data/resume.js
+export default async function() {
+    try {
+        const url = &quot;https://raw.githubusercontent.com/Anras573/json-resume/main/resume.json&quot;;
+        const response = await eleventyFetch(url, {
+            duration: &quot;1d&quot;,
+            type: &quot;json&quot;
+        });
+        return response;
+    } catch (error) {
+        console.error(&quot;Failed to fetch resume data:&quot;, error);
+        // Return minimal fallback data
+        return { basics: { name: &quot;Anders Bo Rasmussen&quot; } };
+    }
+}
+</code></pre>
+<h3>3. <strong>Testing</strong> ⭐⭐</h3>
+<p><strong>Issues:</strong></p>
+<ul>
+<li>No automated tests for build process</li>
+<li>No validation of generated HTML</li>
+<li>No link checking</li>
+<li>No accessibility testing</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<ul>
+<li>Add HTML validation (e.g., using <code>html-validate</code>)</li>
+<li>Add link checker to ensure no broken links</li>
+<li>Add accessibility testing (e.g., using <code>pa11y</code>)</li>
+<li>Add basic smoke tests for the build process</li>
+</ul>
+<p><strong>Example test structure:</strong></p>
+<pre><code class="language-json">&quot;scripts&quot;: {
+  &quot;build&quot;: &quot;npx @11ty/eleventy&quot;,
+  &quot;dev&quot;: &quot;npx @11ty/eleventy --serve&quot;,
+  &quot;generate-pdf&quot;: &quot;node ./generate-pdf.js&quot;,
+  &quot;test&quot;: &quot;npm run test:build &amp;&amp; npm run test:html&quot;,
+  &quot;test:build&quot;: &quot;npm run build&quot;,
+  &quot;test:html&quot;: &quot;html-validate _site/**/*.html&quot;
+}
+</code></pre>
+<h3>4. <strong>Documentation</strong> ⭐⭐⭐</h3>
+<p><strong>Issues:</strong></p>
+<ul>
+<li>No contributing guidelines beyond basic fork/PR flow</li>
+<li>No explanation of the component structure</li>
+<li>Missing documentation about custom Eleventy filters and shortcodes</li>
+<li>No changelog or version history</li>
+<li>Missing license file (mentioned in README but not present)</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<ul>
+<li>Add <code>CONTRIBUTING.md</code> with detailed guidelines</li>
+<li>Add inline JSDoc comments in <code>.eleventy.js</code></li>
+<li>Add <code>CHANGELOG.md</code> to track versions</li>
+<li>Add <code>LICENSE</code> file (MIT as specified in package.json)</li>
+<li>Document the JSON Resume schema expectations</li>
+</ul>
+<h3>5. <strong>Browser Compatibility</strong> ⭐⭐⭐</h3>
+<p><strong>Issues:</strong></p>
+<ul>
+<li>Uses modern CSS features (Grid, Custom Properties) without fallbacks</li>
+<li>No autoprefixer for CSS vendor prefixes</li>
+<li>No polyfills specified</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<ul>
+<li>Consider adding PostCSS with autoprefixer</li>
+<li>Add browserslist configuration</li>
+<li>Or explicitly document supported browsers (modern browsers only)</li>
+</ul>
+<h3>6. <strong>Performance Optimization</strong> ⭐⭐⭐⭐</h3>
+<p><strong>Current:</strong> Good, but could be better</p>
+<p><strong>Potential improvements:</strong></p>
+<ul>
+<li>Font loading strategy: Consider <code>font-display: swap</code> for better perceived performance</li>
+<li>SVG icons are inline (good) but repeated - could be sprites or symbols</li>
+<li>No image optimization pipeline</li>
+<li>Google Fonts loaded from CDN (adds external dependency)</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<pre><code class="language-html">&lt;!-- Add font-display to Google Fonts URL --&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&amp;family=Roboto:wght@300;400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre>
+<h3>7. <strong>Code Quality Tools</strong> ⭐⭐</h3>
+<p><strong>Missing:</strong></p>
+<ul>
+<li>No linter (ESLint)</li>
+<li>No code formatter (Prettier)</li>
+<li>No pre-commit hooks</li>
+<li>No editor config</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<pre><code class="language-bash">npm install --save-dev eslint prettier husky lint-staged
+</code></pre>
+<p>Add <code>.prettierrc</code>:</p>
+<pre><code class="language-json">{
+  &quot;semi&quot;: true,
+  &quot;trailingComma&quot;: &quot;es5&quot;,
+  &quot;singleQuote&quot;: false,
+  &quot;printWidth&quot;: 100
+}
+</code></pre>
+<h3>8. <strong>Dependency Management</strong> ⭐⭐⭐</h3>
+<p><strong>Issues:</strong></p>
+<ul>
+<li>Puppeteer is heavy (downloads Chrome binary) but only used for optional PDF generation</li>
+<li>No lockfile verification in CI</li>
+<li>Dependabot configured but creates dependency PRs without automated testing</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<ul>
+<li>Move Puppeteer to <code>optionalDependencies</code> since it's not required for the main build</li>
+<li>Add <code>npm ci --ignore-scripts</code> option to skip Puppeteer downloads in CI</li>
+<li>Add automated tests that run on Dependabot PRs</li>
+</ul>
+<hr>
+<h2>Code Quality Analysis</h2>
+<h3>Good Practices Observed</h3>
+<p>✅ Semantic HTML structure<br>
+✅ Modular component architecture<br>
+✅ CSS custom properties for theming<br>
+✅ Responsive design with mobile considerations<br>
+✅ Print stylesheet for PDF generation<br>
+✅ ES6+ module syntax<br>
+✅ Git ignore properly configured<br>
+✅ Automated deployment pipeline<br>
+✅ Custom shortcodes for reusable template logic<br>
+✅ External data source separation</p>
+<h3>Code Smells Detected</h3>
+<p>⚠️ Inline SVG duplication (GitHub, LinkedIn icons repeated)<br>
+⚠️ Magic numbers in CSS (e.g., <code>150px</code> for profile image)<br>
+⚠️ Hardcoded URLs in multiple places<br>
+⚠️ No TypeScript for type safety<br>
+⚠️ Mixed indentation in some files (spaces vs tabs)</p>
+<hr>
+<h2>Accessibility Review</h2>
+<h3>⭐⭐⭐⭐ (Good)</h3>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Semantic HTML structure</li>
+<li>Proper heading hierarchy (h1 → h2 → h3)</li>
+<li>Alt text on profile image</li>
+<li>Sufficient color contrast (needs verification)</li>
+<li>Responsive text sizing</li>
+</ul>
+<p><strong>Improvements needed:</strong></p>
+<ul>
+<li>Add <code>lang</code> attribute to SVG icons (already has <code>lang=&quot;en&quot;</code> on html)</li>
+<li>Consider ARIA labels for icon links</li>
+<li>Test with screen readers</li>
+<li>Add skip navigation link</li>
+<li>Ensure focus indicators are visible</li>
+</ul>
+<hr>
+<h2>Security Review</h2>
+<h3>⭐⭐⭐ (Fair)</h3>
+<p><strong>Findings:</strong></p>
+<ol>
+<li>
+<p><strong>Dependency Vulnerability</strong> (Medium)</p>
+<ul>
+<li>js-yaml prototype pollution vulnerability</li>
+<li>Fix: Run <code>npm audit fix</code></li>
+</ul>
+</li>
+<li>
+<p><strong>External Data Fetching</strong> (Low risk)</p>
+<ul>
+<li>Fetches JSON from GitHub</li>
+<li>Using HTTPS (good)</li>
+<li>Cached for 1 day (good)</li>
+<li>No validation of fetched data schema</li>
+</ul>
+</li>
+<li>
+<p><strong>No Content Security Policy</strong> (Informational)</p>
+<ul>
+<li>Could add CSP headers via meta tag or hosting configuration</li>
+<li>Would protect against XSS attacks</li>
+</ul>
+</li>
+<li>
+<p><strong>Inline Styles</strong> (Informational)</p>
+<ul>
+<li>CSS is inline (good for performance)</li>
+<li>No user-generated content (no XSS risk)</li>
+</ul>
+</li>
+<li>
+<p><strong>External Dependencies</strong> (Low risk)</p>
+<ul>
+<li>Google Fonts loaded from CDN</li>
+<li>Consider self-hosting fonts for privacy</li>
+</ul>
+</li>
+</ol>
+<p><strong>Recommendations:</strong></p>
+<ul>
+<li>Add CSP meta tag</li>
+<li>Validate JSON Resume schema</li>
+<li>Consider self-hosting fonts</li>
+<li>Add Subresource Integrity (SRI) for Google Fonts</li>
+</ul>
+<hr>
+<h2>Performance Analysis</h2>
+<h3>⭐⭐⭐⭐⭐ (Excellent)</h3>
+<p><strong>Build Performance:</strong></p>
+<ul>
+<li>Build time: ~0.90 seconds</li>
+<li>3 pages generated</li>
+<li>Minimal dependencies</li>
+</ul>
+<p><strong>Runtime Performance (estimated):</strong></p>
+<ul>
+<li>Static HTML: Excellent</li>
+<li>CSS inline: No render-blocking</li>
+<li>Single HTTP request for fonts: Good</li>
+<li>No JavaScript runtime: Excellent</li>
+<li>Small page size: ~25KB HTML</li>
+</ul>
+<p><strong>Potential improvements:</strong></p>
+<ul>
+<li>Self-host fonts to reduce DNS lookups</li>
+<li>Add resource hints (preconnect already used)</li>
+<li>Consider service worker for offline capability</li>
+</ul>
+<hr>
+<h2>Maintenance &amp; Sustainability</h2>
+<h3>⭐⭐⭐⭐ (Good)</h3>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Simple architecture</li>
+<li>Minimal dependencies</li>
+<li>Automated deployment</li>
+<li>Clear separation of data and presentation</li>
+<li>Active dependency updates via Dependabot</li>
+</ul>
+<p><strong>Risks:</strong></p>
+<ul>
+<li>Single external data source (GitHub raw content)</li>
+<li>No monitoring or error reporting</li>
+<li>Manual PDF generation process</li>
+<li>No backup strategy for resume data</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<ul>
+<li>Add health check endpoint or status page</li>
+<li>Set up error monitoring (e.g., Sentry)</li>
+<li>Automate PDF generation in CI</li>
+<li>Consider versioning resume.json</li>
+</ul>
+<hr>
+<h2>Best Practices Compliance</h2>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version Control</td>
+<td>✅</td>
+<td>Git with proper .gitignore</td>
+</tr>
+<tr>
+<td>README</td>
+<td>✅</td>
+<td>Clear and comprehensive</td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>✅</td>
+<td>GitHub Actions deployment</td>
+</tr>
+<tr>
+<td>Dependency Management</td>
+<td>⚠️</td>
+<td>npm, but needs audit fix</td>
+</tr>
+<tr>
+<td>Code Organization</td>
+<td>✅</td>
+<td>Well-structured components</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>⚠️</td>
+<td>README good, inline docs minimal</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>❌</td>
+<td>No automated tests</td>
+</tr>
+<tr>
+<td>Linting</td>
+<td>❌</td>
+<td>No linter configured</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>⚠️</td>
+<td>One vulnerability to fix</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>✅</td>
+<td>Good semantic HTML</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>✅</td>
+<td>Static site, inline CSS</td>
+</tr>
+<tr>
+<td>Error Handling</td>
+<td>⚠️</td>
+<td>Minimal error handling</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Recommendations Priority Matrix</h2>
+<h3>High Priority (Do First)</h3>
+<ol>
+<li><strong>Fix security vulnerability</strong> - Run <code>npm audit fix</code></li>
+<li><strong>Add error handling</strong> - Graceful degradation for data fetching</li>
+<li><strong>Add LICENSE file</strong> - MIT license as specified</li>
+<li><strong>Add basic tests</strong> - Build validation and HTML checking</li>
+</ol>
+<h3>Medium Priority (Do Soon)</h3>
+<ol start="5">
+<li><strong>Add ESLint and Prettier</strong> - Code quality and consistency</li>
+<li><strong>Improve documentation</strong> - CONTRIBUTING.md, inline comments</li>
+<li><strong>Add accessibility testing</strong> - Automated a11y checks</li>
+<li><strong>Move Puppeteer to optionalDependencies</strong> - Reduce install size</li>
+</ol>
+<h3>Low Priority (Nice to Have)</h3>
+<ol start="9">
+<li><strong>Add CSP headers</strong> - Extra security layer</li>
+<li><strong>Self-host fonts</strong> - Privacy and performance</li>
+<li><strong>Add TypeScript</strong> - Type safety</li>
+<li><strong>Create component documentation</strong> - Explain architecture</li>
+<li><strong>Add changelog</strong> - Track version history</li>
+</ol>
+<hr>
+<h2>Comparison to Industry Standards</h2>
+<h3>JSON Resume Standard ✅</h3>
+<ul>
+<li>Follows jsonresume.org format</li>
+<li>Proper schema usage</li>
+<li>External data source</li>
+</ul>
+<h3>Static Site Best Practices ✅</h3>
+<ul>
+<li>Fast build times</li>
+<li>Minimal dependencies</li>
+<li>Optimized output</li>
+</ul>
+<h3>Modern Web Standards ✅</h3>
+<ul>
+<li>Semantic HTML5</li>
+<li>Responsive design</li>
+<li>Accessibility considerations</li>
+</ul>
+<h3>DevOps Best Practices ⚠️</h3>
+<ul>
+<li>CI/CD: ✅ Yes</li>
+<li>Automated testing: ❌ No</li>
+<li>Monitoring: ❌ No</li>
+<li>Error reporting: ❌ No</li>
+</ul>
+<hr>
+<h2>Conclusion</h2>
+<p>This is a <strong>well-crafted personal CV website</strong> that demonstrates solid understanding of modern web development practices. The use of 11ty for static site generation, the modular component architecture, and the automated deployment pipeline are all excellent choices.</p>
+<h3>Key Strengths:</h3>
+<ul>
+<li>Clean, maintainable codebase</li>
+<li>Fast build and runtime performance</li>
+<li>Professional design with print capability</li>
+<li>Automated deployment</li>
+<li>Data-driven approach</li>
+</ul>
+<h3>Main Weaknesses:</h3>
+<ul>
+<li>Lack of automated testing</li>
+<li>Missing error handling</li>
+<li>Security vulnerability to address</li>
+<li>No code quality tools (linting, formatting)</li>
+</ul>
+<h3>Final Verdict:</h3>
+<p><strong>8/10</strong> - A solid project that serves its purpose well. With the recommended improvements (especially testing, error handling, and security fixes), this could easily be a 9/10 project. The architecture is sound, the code is clean, and the deployment pipeline is professional.</p>
+<hr>
+<h2>Action Items Summary</h2>
+<p><strong>Immediate Actions:</strong></p>
+<pre><code class="language-bash"># 1. Fix security vulnerability
+npm audit fix
+
+# 2. Add LICENSE file
+# Create MIT LICENSE file
+
+# 3. Install dev dependencies
+npm install --save-dev eslint prettier html-validate
+
+# 4. Add basic test script
+# Update package.json scripts
+</code></pre>
+<p><strong>Next Steps:</strong></p>
+<ol>
+<li>Review and implement error handling in data fetching</li>
+<li>Set up ESLint and Prettier configurations</li>
+<li>Add basic build and HTML validation tests</li>
+<li>Improve inline code documentation</li>
+<li>Create CONTRIBUTING.md and CHANGELOG.md</li>
+</ol>
+<hr>
+<p><strong>Review Completed:</strong> January 20, 2026<br>
+<strong>Reviewer:</strong> GitHub Copilot Coding Agent</p>
