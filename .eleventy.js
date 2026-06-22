@@ -43,12 +43,18 @@ export default function(eleventyConfig) {
                 break;
         }
 
-        const url = escapeHtml(safeUrl(profile.url));
+        const url = safeUrl(profile.url);
         const username = escapeHtml(profile.username);
         const network = escapeHtml(profile.network);
 
+        // Only render an actual link for a safe http(s) URL; otherwise show
+        // the username as plain text rather than a misleading link to "#".
+        const label = url === "#"
+            ? username
+            : `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${username}</a>`;
+
         return `<span>${icon}</span>
-        <a href="${url}" target="_blank" rel="noopener noreferrer">${username}</a> <span>(${network})</span>`;
+        ${label} <span>(${network})</span>`;
     });
 
     eleventyConfig.addShortcode("daterange", function(startDate, endDate)
