@@ -1,6 +1,13 @@
 ﻿import CleanCSS from "clean-css";
 
 export default function(eleventyConfig) {
+    const escapeHtml = (value) => String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
     eleventyConfig.addFilter("cssmin", function(code) {
         return new CleanCSS({}).minify(code).styles;
     });
@@ -8,8 +15,8 @@ export default function(eleventyConfig) {
     eleventyConfig.addShortcode("address", function(location)
     {
         let country = location.countryCode === "DK" ? "Denmark" : location.countryCode;
-        
-        return `<address>${location.city}, ${country}</address>`;
+
+        return `<address>${escapeHtml(location.city)}, ${escapeHtml(country)}</address>`;
     });
 
     eleventyConfig.addShortcode("profile", function(profile)
@@ -28,8 +35,12 @@ export default function(eleventyConfig) {
                 break;
         }
 
+        const url = escapeHtml(profile.url);
+        const username = escapeHtml(profile.username);
+        const network = escapeHtml(profile.network);
+
         return `<span>${icon}</span>
-        <a href="${profile.url}" target="_blank" rel="noopener noreferrer" aria-label="${profile.network} profile">${profile.username}</a> <span>(${profile.network})</span>`;
+        <a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${network} profile">${username}</a> <span>(${network})</span>`;
     });
 
     eleventyConfig.addShortcode("daterange", function(startDate, endDate)
@@ -49,6 +60,6 @@ export default function(eleventyConfig) {
     });
     
     eleventyConfig.addShortcode("keywords", function (keywords) {
-       return keywords.map(keyword => `<span>${keyword}</span>`).join(", "); 
+       return keywords.map(keyword => `<span>${escapeHtml(keyword)}</span>`).join(", ");
     });
 };
