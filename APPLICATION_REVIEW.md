@@ -118,11 +118,13 @@ So `https://anbora.dk/PROJECT_REVIEW/` and `/README/` are publicly reachable. Fo
 
 ## Quick wins checklist
 
-- [ ] Exclude `README.md` / `PROJECT_REVIEW.md` (and this file) from the published output
-- [ ] Fix `targer` → `target` in `contact.njk`
-- [ ] Add `rel="noopener noreferrer"` to all `target="_blank"` links
-- [ ] `npm audit fix` (or bump Eleventy) to clear build-time advisories
-- [ ] Add `aria-hidden="true"` to decorative SVGs and `aria-label` to icon links
+- [x] Exclude `README.md` / `PROJECT_REVIEW.md` (and this file) from the published output — via `.eleventyignore`
+- [x] Fix `targer` → `target` in `contact.njk`
+- [x] Add `rel="noopener noreferrer"` to all `target="_blank"` links
+- [x] `npm audit fix` — cleared the high-severity `picomatch` advisory; 3 moderate remain in Eleventy's `gray-matter`→`js-yaml` (need an Eleventy major bump, deferred)
+- [x] Add `aria-hidden="true"` to decorative SVGs and `aria-label` to icon links
+
+> All five quick wins above were applied in the same change set that introduced this review.
 
 ---
 
