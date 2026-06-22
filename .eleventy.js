@@ -8,6 +8,14 @@ export default function(eleventyConfig) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
 
+    // Allowlist http(s) URLs so externally-sourced values can't inject a
+    // dangerous scheme (e.g. javascript:) into an href. Falls back to "#".
+    const safeUrl = (value) => /^https?:\/\//i.test(String(value).trim())
+        ? String(value).trim()
+        : "#";
+
+    eleventyConfig.addFilter("safeUrl", safeUrl);
+
     eleventyConfig.addFilter("cssmin", function(code) {
         return new CleanCSS({}).minify(code).styles;
     });
@@ -35,12 +43,12 @@ export default function(eleventyConfig) {
                 break;
         }
 
-        const url = escapeHtml(profile.url);
+        const url = escapeHtml(safeUrl(profile.url));
         const username = escapeHtml(profile.username);
         const network = escapeHtml(profile.network);
 
         return `<span>${icon}</span>
-        <a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${network} profile">${username}</a> <span>(${network})</span>`;
+        <a href="${url}" target="_blank" rel="noopener noreferrer">${username}</a> <span>(${network})</span>`;
     });
 
     eleventyConfig.addShortcode("daterange", function(startDate, endDate)
