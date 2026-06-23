@@ -1,5 +1,5 @@
 .header {
-    border-bottom: var(--border-bottom);
+    border-bottom: var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;

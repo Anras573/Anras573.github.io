@@ -1,5 +1,5 @@
 .experience {
-    border-bottom: var(--border-bottom);
+    border-bottom: var(--border);
     margin-left: var(--gap);
     padding: var(--section-padding);
 }

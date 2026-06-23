@@ -14,7 +14,7 @@
     --heading-color: var(--a);
     --subheading-color: var(--c);
     
-    --border-bottom: 1px dashed var(--secondary-bg-color);
+    --border: 1px dashed var(--secondary-bg-color);
     --section-padding: 0 1rem 1rem;
 
     --gap: 10px;

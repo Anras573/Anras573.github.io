@@ -36,5 +36,5 @@ h3 {
 }
 
 main {
-    border-left: var(--border-bottom);
+    border-left: var(--border);
 }
