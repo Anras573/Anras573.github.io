@@ -33,7 +33,7 @@
     
 <!-- feed it through our cssmin filter to minify -->
 <style>
-    body{background-color:var(--primary-bg-color);font-family:Roboto,Arial,sans-serif;font-weight:300;margin:0;padding:0}a{color:var(--link-color);text-decoration:none}a:hover{color:var(--link-hover-color)}h1,h2{color:var(--heading-color);font-family:'Open Sans',sans-serif;font-weight:300}h1,h2,h3,h4{margin:.4em 0}h2{font-size:1.2rem}h3{color:var(--subheading-color);font-size:1rem;font-weight:400}main{border-left:var(--border-bottom)}:root{--a:#225476;--b:#3fcef6;--c:#318ead;--d:#ddd;--e:#fff;--primary-bg-color:var(--e);--secondary-bg-color:var(--d);--link-color:var(--b);--link-hover-color:var(--c);--heading-color:var(--a);--subheading-color:var(--c);--border-bottom:1px dashed var(--secondary-bg-color);--section-padding:0 1rem 1rem;--gap:10px}.grid-container{margin:auto;max-width:960px}@media (min-width:960px){.grid-container{display:grid;grid-template-columns:1fr 2fr;grid-template-rows:auto;gap:var(--gap)}header{grid-column:span 2}}.text-center{text-align:center}.d-inline-block{display:inline-block}.header{border-bottom:var(--border-bottom);display:flex;justify-content:space-between;align-items:center;margin:0;padding:0 1rem}.header h2{font-size:1.5rem}@media screen and (max-width:959px){.header{display:block;margin-bottom:var(--gap);text-align:center}}.profile{border-bottom:var(--border-bottom);display:flex;justify-content:center;padding:var(--section-padding)}.profile img{border-radius:50%;width:150px}.contact{border-bottom:var(--border-bottom);padding:var(--section-padding)}.icon-list{list-style:none;padding:0}.icon-list li span{display:inline-block;width:20px}.icon-list,address{display:inline-block;margin:0}.skills{border-bottom:var(--border-bottom);padding:var(--section-padding)}.skills h3{margin:.4rem 0 0}.skills .level{font-style:italic;margin-bottom:.4rem}.education{border-bottom:var(--border-bottom);padding:var(--section-padding)}.education article:first-of-type{margin-bottom:1rem}.summary{border-bottom:var(--border-bottom);padding:var(--section-padding)}.experience{border-bottom:var(--border-bottom);margin-left:var(--gap);padding:var(--section-padding)}.volunteer{border-bottom:var(--border-bottom);margin-left:var(--gap);padding:var(--section-padding)}@media print{body{font-family:Arial,Helvetica,sans-serif;font-size:smaller}.grid-container{display:block;width:100%}aside{float:left;max-width:33%}main{float:right;max-width:66%}.print-d-none{display:none}.experience{border-bottom:none}.page-break{page-break-before:always}}
+    body{background-color:var(--primary-bg-color);font-family:Roboto,Arial,sans-serif;font-weight:300;margin:0;padding:0}a{color:var(--link-color);text-decoration:none}a:hover{color:var(--link-hover-color)}h1,h2{color:var(--heading-color);font-family:'Open Sans',sans-serif;font-weight:300}h1,h2,h3,h4{margin:.4em 0}h2{font-size:1.2rem}h3{color:var(--subheading-color);font-size:1rem;font-weight:400}main{border-left:var(--border)}:root{--a:#225476;--b:#3fcef6;--c:#318ead;--d:#ddd;--e:#fff;--primary-bg-color:var(--e);--secondary-bg-color:var(--d);--link-color:var(--b);--link-hover-color:var(--c);--heading-color:var(--a);--subheading-color:var(--c);--border:1px dashed var(--secondary-bg-color);--section-padding:0 1rem 1rem;--gap:10px}.grid-container{margin:auto;max-width:960px}@media (min-width:960px){.grid-container{display:grid;grid-template-columns:1fr 2fr;grid-template-rows:auto;gap:var(--gap)}header{grid-column:span 2}}.text-center{text-align:center}.d-inline-block{display:inline-block}.header{border-bottom:var(--border);display:flex;justify-content:space-between;align-items:center;margin:0;padding:0 1rem}.header h2{font-size:1.5rem}@media screen and (max-width:959px){.header{display:block;margin-bottom:var(--gap);text-align:center}}.profile{border-bottom:var(--border);display:flex;justify-content:center;padding:var(--section-padding)}.profile img{border-radius:50%;width:150px}.contact{border-bottom:var(--border);padding:var(--section-padding)}.icon-list{list-style:none;padding:0}.icon-list li span{display:inline-block;width:20px}.icon-list,address{display:inline-block;margin:0}.skills{border-bottom:var(--border);padding:var(--section-padding)}.skills h3{margin:.4rem 0 0}.skills .level{font-style:italic;margin-bottom:.4rem}.education{border-bottom:var(--border);padding:var(--section-padding)}.education article:first-of-type{margin-bottom:1rem}.summary{border-bottom:var(--border);padding:var(--section-padding)}.experience{border-bottom:var(--border);margin-left:var(--gap);padding:var(--section-padding)}.volunteer{border-bottom:var(--border);margin-left:var(--gap);padding:var(--section-padding)}@media print{body{font-family:Arial,Helvetica,sans-serif;font-size:smaller}.grid-container{display:block;width:100%}aside{float:left;max-width:33%}main{float:right;max-width:66%}.print-d-none{display:none}.experience{border-bottom:none}.page-break{page-break-before:always}}
 </style>
   </head>
   <body>
@@ -252,16 +252,16 @@
                     <time datetime="2017-06-01">June 2017</time> - <time datetime="2018-06-30">June 2018</time>
                 </div>
             </header>
-            <p>Part of the Core Sigma Team, responsible for the build pipeline, the upcoming cloud framework, and SharePoint Online integration. The Sigma Engine was written in Delphi XE. The cloud framework was written in C#, and the SharePoint Online integration was written in C#.</p>
+            <p>Part of the Core Sigma Team, working on the build pipeline, cloud framework, and SharePoint Online integration for the Sigma Ecosystem. Cloud and integration work written in C#.</p>
             <ul>
                 
-                    <li>Migrated the build pipeline to new server hardware.</li>
+                    <li>Implemented a new cloud framework for the Sigma Ecosystem using CQRS and Event Sourcing.</li>
                 
-                    <li>Implemented the new cloud framework for the Sigma Ecosystem, using methodologies such as CQRS, and Event Sourcing.</li>
-                
-                    <li>Created a custom file handler for SharePoint Online, enabling users to open files directly into the Sigma Engine.</li>
+                    <li>Created a custom SharePoint Online file handler, enabling users to open files directly in the Sigma Engine.</li>
                 
                     <li>Integrated third-party pricing catalogues into the Sigma Engine.</li>
+                
+                    <li>Migrated the build pipeline to new server hardware.</li>
                 
             </ul>
         </article>
@@ -273,14 +273,14 @@
                     <time datetime="2016-09-01">September 2016</time> - <time datetime="2017-05-31">May 2017</time>
                 </div>
             </header>
-            <p>Part of the team that remade the customer portal MyALD from scratch. Built using C#, ASP.NET CORE MVC, and MSSQL.</p>
+            <p>Rebuilt the customer portal MyALD from scratch using C#, ASP.NET Core MVC, and MSSQL, replacing a legacy Sitecore solution.</p>
             <ul>
                 
-                    <li>Migrating from a Sitecore solution to a custom built web application, using ASP.NET CORE MVC.</li>
+                    <li>Led the migration from Sitecore to a custom ASP.NET Core MVC web application.</li>
                 
-                    <li>Integrated the backend with a new frontend, written by In2Media.</li>
+                    <li>Integrated the backend with a new frontend delivered by In2Media.</li>
                 
-                    <li>Took over frontend development from In2Media.</li>
+                    <li>Took over and maintained frontend development from the external vendor.</li>
                 
             </ul>
         </article>
