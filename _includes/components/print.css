@@ -11,12 +11,12 @@
 
     aside {
         float: left;
-        max-width: 33%;
+        max-width: 35%;
     }
 
     main {
         float: right;
-        max-width: 66%;
+        max-width: 64%;
     }
 
     .print-d-none {

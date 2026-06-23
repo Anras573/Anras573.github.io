@@ -1,0 +1,31 @@
+{% if resume.projects and (resume.projects | length) %}
+<section class="projects">
+    <h2>Projects</h2>
+    {% for project in resume.projects %}
+        <article>
+            <header>
+                <h3>
+                    {% if (project.url | safeUrl) != "#" %}
+                        <a href="{{ project.url | safeUrl }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+                    {% else %}
+                        {{ project.name }}
+                    {% endif %}
+                </h3>
+            </header>
+            {% if project.description %}
+                <p>{{ project.description }}</p>
+            {% endif %}
+            {% if project.highlights and (project.highlights | length) %}
+                <ul>
+                    {% for highlight in project.highlights %}
+                        <li>{{ highlight }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if project.keywords and (project.keywords | length) %}
+                <div>{% keywords project.keywords %}</div>
+            {% endif %}
+        </article>
+    {% endfor %}
+</section>
+{% endif %}

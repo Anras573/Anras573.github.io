@@ -28,7 +28,8 @@ export default async function() {
             work: [],
             volunteer: [],
             education: [],
-            skills: []
+            skills: [],
+            projects: []
         };
     }
 }
