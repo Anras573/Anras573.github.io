@@ -2,7 +2,6 @@
     <h2>Technical Skills</h2>
     {% for skill in resume.skills %}
         <h3>{{ skill.name }}</h3>
-        <div class="level">{{ skill.level }}</div>
         <div>
             {% keywords skill.keywords %}
         </div>
