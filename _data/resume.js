@@ -16,7 +16,7 @@ export default async function() {
         // Note: Update these values if personal information changes
         return {
             basics: {
-                name: "Anders Bo Rasmussen",
+                name: "Anders Ayoe Autzen",
                 label: "Senior Software Engineer",
                 image: "",
                 summary: "Resume data temporarily unavailable. Please try again later.",

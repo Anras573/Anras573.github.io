@@ -82,7 +82,7 @@ Distributed under the MIT License. See LICENSE for more information.
 
 ## Contact
 
-**Anders Bo Rasmussen**
+**Anders Ayoe Autzen**
 GitHub: @anras573
 
 ## Acknowledgements

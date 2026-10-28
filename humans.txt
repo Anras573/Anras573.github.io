@@ -1,5 +1,5 @@
 /* TEAM */
-Developer: Anders Bo Rasmussen (Anras573) - Senior Software Engineer
+Developer: Anders Ayoe Autzen (Anras573) - Senior Software Engineer
 
 /* THANKS */
 Thanks to: Open-source community, family, and supporters.
