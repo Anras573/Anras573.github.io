@@ -1,0 +1,45 @@
+name: Release Resume
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Generate PDF
+        run: |
+          npx --yes http-server _site -p 8080 --silent &
+          npx --yes wait-on http://localhost:8080
+          npm run generate-pdf
+          mv dist/output.pdf resume.pdf
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="resume-$(date -u +%Y-%m-%d)-${GITHUB_SHA::7}"
+          gh release create "$tag" resume.pdf \
+            --title "Resume $(date -u +%Y-%m-%d)" \
+            --notes "Resume generated from the content of https://anbora.dk at ${GITHUB_SHA}." \
+            --latest
