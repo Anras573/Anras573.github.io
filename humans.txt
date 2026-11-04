@@ -6,7 +6,7 @@ Thanks to: Open-source community, family, and supporters.
 Special thanks to: https://www.11ty.dev/ and https://jsonresume.org/
 
 /* SITE */
-Last Updated: 2024-08-25
+Last Updated: 2026-11-04
 Standards: HTML5, CSS3, ES6
 Hosting: GitHub Pages
 Tools: Puppeteer, 11ty
